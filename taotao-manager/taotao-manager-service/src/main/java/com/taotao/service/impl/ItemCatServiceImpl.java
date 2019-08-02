@@ -3,7 +3,7 @@ package com.taotao.service.impl;
 import com.taotao.mapper.ItemCatMapper;
 import com.taotao.pojo.TbItemCat;
 import com.taotao.service.ItemCatService;
-import com.taotao.utils.EasyUITreeNode;
+import com.taotao.common.pojo.EasyUITreeNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

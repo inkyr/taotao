@@ -2,6 +2,7 @@ package com.taotao.mapper;
 
 import com.taotao.pojo.TbItem;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -15,7 +16,7 @@ public interface ItemMapper {
     @Select("SELECT * FROM tbitem")
     List<TbItem> findItemAll();
 
-    @Delete("<script> delete from tbitem where id in <foreach collection = 'array' item='id' open='(' separator = ',' close=')'>#{id}</foreach> </script>")
+    @Delete("<script> DELETE from tbitem WHERE id IN <foreach collection = 'array' item='id' open='(' separator = ',' close=')'>#{id}</foreach> </script>")
     int delItems(Integer[] ids);
 
     @Update("<script> UPDATE tbitem SET status=2 WHERE id IN <foreach collection = 'array' item = 'id' open = '(' separator = ',' close = ')'>#{id}</foreach> </script>")
@@ -24,4 +25,6 @@ public interface ItemMapper {
     @Update("<script> UPDATE tbitem SET status=1 WHERE id IN <foreach collection = 'array' item = 'id' open = '(' separator = ',' close = ')'>#{id}</foreach> </script>")
     int upItem(Integer[] ids);
 
+    @Insert("INSERT INTO tbitem (id, title, sellPoint, price, num, barcode, image, cid, status, created, updated) VALUES (#{id}, #{title}, #{sellPoint}, #{price}, #{num}, #{barcode}, #{image}, #{cid}, #{status}, #{created}, #{updated})")
+    int addItem(TbItem tbItem);
 }

@@ -1,7 +1,7 @@
 package com.taotao.controller;
 
 import com.taotao.service.ItemCatService;
-import com.taotao.utils.EasyUITreeNode;
+import com.taotao.common.pojo.EasyUITreeNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

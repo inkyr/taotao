@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <table class="easyui-datagrid" id="itemList" title="商品列表" 
        data-options="singleSelect:false,collapsible:true,pagination:true,url:'/item/list',method:'get',pageSize:30,toolbar:toolbar">
+    <%--我esayUi
+        的最大一个特点就是 访问这个页面的时候 先去请求服务器 得到数据以后 在展示页面
+    --%>
     <thead>
         <tr>
         	<th data-options="field:'ck',checkbox:true"></th>
-        	<th data-options="field:'itemid',width:60">商品ID</th>
+        	<th data-options="field:'id',width:60">商品ID</th>
             <th data-options="field:'title',width:200">商品标题</th>
             <th data-options="field:'cid',width:100">叶子类目</th>
             <th data-options="field:'sellPoint',width:100">卖点</th>
@@ -51,6 +54,9 @@
         		$.messager.alert('提示','只能选择一个商品!');
         		return ;
         	}
+
+
+
         	
         	$("#itemEditWindow").window({
         		onLoad :function(){

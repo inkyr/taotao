@@ -22,7 +22,7 @@
     <!--扫描service层-->
     <context:component-scan base-package="com.taotao.service"/>
     <!-- 加载配置文件 -->
-    <context:property-placeholder location="classpath:db.properties" />
+    <context:property-placeholder location="classpath:*.properties" />
     <!-- 数据库连接池 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
         <property name="url" value="${jdbc.url}" />
@@ -77,6 +77,7 @@
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service timeout="4000" interface="com.taotao.service.ItemService" ref="itemServiceImpl" />
     <dubbo:service timeout="4000" interface="com.taotao.service.ItemCatService" ref="itemCatServiceImpl" />
+    <dubbo:service timeout="4000" interface="com.taotao.service.PictureService" ref="pictureServiceImpl" />
 
 
 

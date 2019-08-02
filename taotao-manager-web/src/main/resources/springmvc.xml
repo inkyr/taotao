@@ -13,21 +13,32 @@
        http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <context:component-scan base-package="com.taotao.controller" />
-    <mvc:annotation-driven />
+    <context:component-scan base-package="com.taotao.controller"/>
+    <mvc:annotation-driven/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <property name="suffix" value=".jsp" />
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
-    
+
     <mvc:resources mapping="/css/**" location="WEB-INF/css/"/>
     <mvc:resources mapping="/js/**" location="WEB-INF/js/"/>
+
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设定默认编码 -->
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+        <property name="maxUploadSize" value="5242880"></property>
+    </bean>
 
     <!-- 引用dubbo服务 -->
     <dubbo:application name="inkyr-taotao-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="116.62.109.157:2181"/>
-    <dubbo:reference interface="com.taotao.service.ItemService" id="itemService" />
-    <dubbo:reference interface="com.taotao.service.ItemCatService" id="itemCatService" />
+
+    <dubbo:reference interface="com.taotao.service.ItemService" id="itemService"/>
+    <dubbo:reference interface="com.taotao.service.ItemCatService" id="itemCatService"/>
+    <dubbo:reference interface="com.taotao.service.PictureService" id="pictureService"/>
 
 
 </beans>

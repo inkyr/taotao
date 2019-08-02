@@ -4,13 +4,15 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class TbItemDesc implements Serializable{
+
     private Long itemId;
 
     private Date created;
 
     private Date updated;
 
-    private String itemDesc;
+    private String desc;
+
 
 	public Long getItemId() {
 		return itemId;
@@ -36,19 +38,21 @@ public class TbItemDesc implements Serializable{
 		this.updated = updated;
 	}
 
-	public String getItemDesc() {
-		return itemDesc;
+	public String getDesc() {
+		return desc;
 	}
 
-	public void setItemDesc(String itemDesc) {
-		this.itemDesc = itemDesc;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 	@Override
 	public String toString() {
-		return "TbItemDesc [itemId=" + itemId + ", created=" + created + ", updated=" + updated + ", itemDesc="
-				+ itemDesc + "]";
+		return "TbItemDesc{" +
+				"itemId=" + itemId +
+				", created=" + created +
+				", updated=" + updated +
+				", desc='" + desc + '\'' +
+				'}';
 	}
-
-   
 }

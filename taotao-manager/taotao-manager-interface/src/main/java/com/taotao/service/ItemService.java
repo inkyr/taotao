@@ -1,8 +1,9 @@
 package com.taotao.service;
 
 import com.taotao.pojo.TbItem;
-import com.taotao.utils.EasyUIResult;
-import com.taotao.utils.TaotaoResult;
+import com.taotao.common.pojo.EasyUIResult;
+import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.pojo.TbItemDesc;
 
 public interface ItemService {
 
@@ -15,4 +16,6 @@ public interface ItemService {
     TaotaoResult updateDownItem(Integer[] ids);
 
     TaotaoResult updateUpItem(Integer[] ids);
+
+    TaotaoResult addItem(TbItem tbItem, TbItemDesc tbItemDesc);
 }

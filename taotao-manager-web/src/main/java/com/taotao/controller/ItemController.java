@@ -1,8 +1,10 @@
 package com.taotao.controller;
 
+import com.taotao.common.pojo.EasyUIResult;
+import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbItemDesc;
 import com.taotao.service.ItemService;
-import com.taotao.utils.EasyUIResult;
-import com.taotao.utils.TaotaoResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -62,7 +64,19 @@ public class ItemController {
     public TaotaoResult upItem(Integer[] ids){
         TaotaoResult result= itemService.updateUpItem(ids);
         return result;
+    }
 
+    /**
+     * 添加商品信息
+     * @param tbItem
+     * @param tbItemDesc
+     * @return
+     */
+    @RequestMapping("/item/save")
+    @ResponseBody
+    public TaotaoResult addItem(TbItem tbItem, TbItemDesc tbItemDesc){
+        TaotaoResult result = itemService.addItem(tbItem, tbItemDesc);
+        return result;
     }
 }
 
