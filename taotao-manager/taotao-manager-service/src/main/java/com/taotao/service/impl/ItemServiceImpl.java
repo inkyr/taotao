@@ -42,7 +42,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public TaotaoResult delItems(Integer[] ids) {
+    public TaotaoResult delItems(Long[] ids) {
         int i = itemMapper.delItems(ids);
         if (i != 0) {
             return TaotaoResult.ok();
@@ -51,7 +51,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public TaotaoResult updateDownItem(Integer[] ids) {
+    public TaotaoResult updateDownItem(Long[] ids) {
         int i = itemMapper.downItem(ids);
         if (i != 0) {
             return TaotaoResult.ok();
@@ -60,7 +60,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public TaotaoResult updateUpItem(Integer[] ids) {
+    public TaotaoResult updateUpItem(Long[] ids) {
         int i = itemMapper.upItem(ids);
         if (i != 0) {
             return TaotaoResult.ok();
@@ -88,4 +88,14 @@ public class ItemServiceImpl implements ItemService {
         }
         return TaotaoResult.build(500, "添加数据失败", null);
     }
+
+    @Override
+    public TaotaoResult findItemDescById(Long itemId) {
+        TbItemDesc itemDesc = itemDescMapper.findItemDescById(itemId);
+        if(itemDesc != null){
+            return TaotaoResult.build(200, "ok", itemDesc);
+        }
+        return null;
+    }
+
 }

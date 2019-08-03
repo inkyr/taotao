@@ -17,13 +17,13 @@ public interface ItemMapper {
     List<TbItem> findItemAll();
 
     @Delete("<script> DELETE from tbitem WHERE id IN <foreach collection = 'array' item='id' open='(' separator = ',' close=')'>#{id}</foreach> </script>")
-    int delItems(Integer[] ids);
+    int delItems(Long[] ids);
 
     @Update("<script> UPDATE tbitem SET status=2 WHERE id IN <foreach collection = 'array' item = 'id' open = '(' separator = ',' close = ')'>#{id}</foreach> </script>")
-    int downItem(Integer[] ids);
+    int downItem(Long[] ids);
 
     @Update("<script> UPDATE tbitem SET status=1 WHERE id IN <foreach collection = 'array' item = 'id' open = '(' separator = ',' close = ')'>#{id}</foreach> </script>")
-    int upItem(Integer[] ids);
+    int upItem(Long[] ids);
 
     @Insert("INSERT INTO tbitem (id, title, sellPoint, price, num, barcode, image, cid, status, created, updated) VALUES (#{id}, #{title}, #{sellPoint}, #{price}, #{num}, #{barcode}, #{image}, #{cid}, #{status}, #{created}, #{updated})")
     int addItem(TbItem tbItem);

@@ -11,11 +11,13 @@ public interface ItemService {
 
     EasyUIResult findItem(int page, int rows);
 
-    TaotaoResult delItems(Integer[] ids);
+    TaotaoResult delItems(Long[] ids);
 
-    TaotaoResult updateDownItem(Integer[] ids);
+    TaotaoResult updateDownItem(Long[] ids);
 
-    TaotaoResult updateUpItem(Integer[] ids);
+    TaotaoResult updateUpItem(Long[] ids);
 
     TaotaoResult addItem(TbItem tbItem, TbItemDesc tbItemDesc);
+
+    TaotaoResult findItemDescById(Long itemId);
 }
