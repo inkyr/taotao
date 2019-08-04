@@ -78,6 +78,7 @@
     <dubbo:service timeout="4000" interface="com.taotao.service.ItemService" ref="itemServiceImpl" />
     <dubbo:service timeout="4000" interface="com.taotao.service.ItemCatService" ref="itemCatServiceImpl" />
     <dubbo:service timeout="4000" interface="com.taotao.service.PictureService" ref="pictureServiceImpl" />
+    <dubbo:service timeout="4000" interface="com.taotao.service.OssPictureService" ref="ossPictureServiceImpl" />
 
 
 
