@@ -38,4 +38,14 @@ public class ContentCategoryController {
     public void updateContentCategory(@RequestParam(value = "id") Long id, @RequestParam(value = "name") String name){
         contentCategoryService.updateContentCategory(id, name);
     }
+
+    @RequestMapping("/category/delete")
+    public String deleteContentCategory(Long id){
+        contentCategoryService.deleteAndChangeState(id);
+        return "forward:/content/category/list?id=0";
+    }
+
+
+
+
 }

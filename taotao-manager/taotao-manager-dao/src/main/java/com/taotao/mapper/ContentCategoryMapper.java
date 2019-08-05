@@ -22,4 +22,7 @@ public interface ContentCategoryMapper {
 
     @Update("UPDATE tbcontentcategory SET name=#{name} WHERE id=#{id}")
     void updateContentCategoryName(@Param("id") Long id, @Param("name") String name);
+
+    @Delete("DELETE FROM tbcontentcategory WHERE id = #{id}")
+    void deleteContentCategory(Long id);
 }
