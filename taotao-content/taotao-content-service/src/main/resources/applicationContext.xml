@@ -77,6 +77,7 @@
     <!-- 声明需要暴露的服务接口 -->
     <!--<dubbo:service timeout="4000" interface="com.taotao.service.ItemService" ref="itemServiceImpl" />-->
     <dubbo:service timeout="4000" interface="com.taotao.content.service.ContentCategoryService" ref="contentCategoryServiceImpl" />
+    <dubbo:service timeout="4000" interface="com.taotao.content.service.ContentService" ref="contentServiceImpl" />
 
 
 

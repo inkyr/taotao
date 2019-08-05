@@ -13,6 +13,7 @@
        http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+    <context:property-placeholder location="classpath:*.properties" ignore-unresolvable="true"/>
     <context:component-scan base-package="com.taotao.portal.controller"/>
     <mvc:annotation-driven/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -20,11 +21,11 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!--&lt;!&ndash; 引用dubbo服务 &ndash;&gt;-->
-    <!--<dubbo:application name="inkyr-taotao-portal-web"/>-->
-    <!--<dubbo:registry protocol="zookeeper" address="116.62.109.157:2181"/>-->
+    <!-- 引用dubbo服务 -->
+    <dubbo:application name="inkyr-taotao-portal-web"/>
+    <dubbo:registry protocol="zookeeper" address="116.62.109.157:2181"/>
 
-    <!--<dubbo:reference interface="com.taotao.service.ItemService" id="itemService"/>-->
+    <dubbo:reference interface="com.taotao.content.service.ContentService" id="contentService"/>
 
 
 </beans>

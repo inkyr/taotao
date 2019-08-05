@@ -41,6 +41,7 @@
     <dubbo:reference interface="com.taotao.service.PictureService" id="pictureService"/>
     <dubbo:reference interface="com.taotao.service.OssPictureService" id="ossPictureService"/>
     <dubbo:reference interface="com.taotao.content.service.ContentCategoryService" id="contentCategoryService"/>
+    <dubbo:reference interface="com.taotao.content.service.ContentService" id="contentService"/>
 
 
 </beans>
