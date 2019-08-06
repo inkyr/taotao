@@ -34,13 +34,10 @@ public class IndexController {
 
     @RequestMapping("/index")
     public String showIndex(Model model) {
-        EasyUIResult result = contentService.findContentAll(AD1_CID);
+        List<TbContent> result = contentService.getContentAll(AD1_CID);
 
-        List<?> tbContents = result.getRows();
-        List<TbContent> list = new ArrayList<>();
-        list.addAll((Collection<? extends TbContent>) tbContents);
         List<Ad1Node> ad1List = new ArrayList<>();
-        for (TbContent tbContent : list) {
+        for (TbContent tbContent : result) {
             Ad1Node node = new Ad1Node();
             node.setAlt(tbContent.getTitle());
             node.setHeight(AD1_HEIGHT);

@@ -18,8 +18,8 @@ public class OssUtil {
     //文件上传
     public static boolean uploadOssFile(byte[] content, String fileName ,String filePath) {
         Boolean result = false;
-        String accessKeyId = "LTAI9snmDW8ce1Pl";      // 请填写您的AccessKeyId。
-        String accessKeySecret = "UIlvV6liYBio0EOFXBifkLBTcIkmZe"; // 请填写您的AccessKeySecret。
+        String accessKeyId = "LTAIH1rN3bUOuyC2";      // 请填写您的AccessKeyId。
+        String accessKeySecret = "f9El52UXpnxWL0IEvh49bJTMZOEmrs"; // 请填写您的AccessKeySecret。
         String endpoint = "http://oss-cn-hangzhou.aliyuncs.com"; // 请填写您的 endpoint。
         String bucket = "keepin";                    // 请填写您的 bucketname 。
         fileName = "taotao"+"/" +filePath+"/"+fileName;

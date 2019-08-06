@@ -2,11 +2,11 @@ package com.taotao.portal.pojo;
 
 public class Ad1Node {
 
-    private String srcB;
+    private String src;
     private Integer height;
     private String alt;
     private Integer width;
-    private String src;
+    private String srcB;
     private Integer widthB;
     private String href;
     private Integer heightB;
