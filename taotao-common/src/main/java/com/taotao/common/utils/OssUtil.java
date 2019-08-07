@@ -11,15 +11,12 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * ftp上传下载工具类
- */
 public class OssUtil {
     //文件上传
     public static boolean uploadOssFile(byte[] content, String fileName ,String filePath) {
         Boolean result = false;
-        String accessKeyId = "LTAIH1rN3bUOuyC2";      // 请填写您的AccessKeyId。
-        String accessKeySecret = "f9El52UXpnxWL0IEvh49bJTMZOEmrs"; // 请填写您的AccessKeySecret。
+        String accessKeyId = "LTAIHd3EXB0GxcSi";      // 请填写您的AccessKeyId。
+        String accessKeySecret = "HTCIKAEiH8brpaOxC8IrGHAvEvr59O"; // 请填写您的AccessKeySecret。
         String endpoint = "http://oss-cn-hangzhou.aliyuncs.com"; // 请填写您的 endpoint。
         String bucket = "keepin";                    // 请填写您的 bucketname 。
         fileName = "taotao"+"/" +filePath+"/"+fileName;
