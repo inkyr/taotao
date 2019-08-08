@@ -43,6 +43,10 @@
         <property name="basePackage" value="com.taotao.mapper" />
     </bean>
 
+    <bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
+        <constructor-arg name="baseURL" value="http://116.62.109.157:8888/solr"/>
+    </bean>
+
     <!--事务管理-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!-- 数据源 -->

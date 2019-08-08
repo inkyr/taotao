@@ -2,10 +2,7 @@ package com.taotao.mapper;
 
 import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemDesc;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 public interface ItemDescMapper {
 
