@@ -35,6 +35,12 @@
 	         		<li data-options="attributes:{'url':'content'}">内容管理</li>
 	         	</ul>
          	</li>
+			<li>
+				<span>初始化搜索引擎</span>
+				<ul>
+					<li data-options="attributes:{'url':'import-solr'}">导入内容索引</li>
+				</ul>
+			</li>
          </ul>
     </div>
     <div data-options="region:'center',title:''">
