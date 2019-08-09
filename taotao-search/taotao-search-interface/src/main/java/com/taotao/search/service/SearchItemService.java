@@ -16,4 +16,6 @@ public interface SearchItemService {
      * @return
      */
     SearchResult search(String queryString, int page, int rows);
+
+    void addDocument(SearchItem itemById);
 }
