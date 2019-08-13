@@ -2,8 +2,8 @@ package com.taotao.content.service.impl;
 
 import com.taotao.common.pojo.EasyUIResult;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.JedisUtil;
 import com.taotao.common.utils.JsonUtils;
-import com.taotao.content.jedis.JedisClient;
 import com.taotao.content.service.ContentService;
 import com.taotao.mapper.ContentMapper;
 import com.taotao.pojo.TbContent;
@@ -21,11 +21,11 @@ public class ContentServiceImpl implements ContentService {
     @Autowired
     private ContentMapper contentMapper;
 
-    @Autowired
-    private JedisClient jedisClient;
-
     @Value("${CONTENT_KEY}")
     private String CONTENT_KEY;
+
+    @Value("${ITEM_KEY}")
+    private String ITEM_KEY;
 
     @Override
     public EasyUIResult findContentAll(Long contentCategoryId) {
@@ -33,7 +33,7 @@ public class ContentServiceImpl implements ContentService {
         /**
          * 判断有无缓存
          */
-        String json = jedisClient.get(CONTENT_KEY);
+        String json = JedisUtil.get(CONTENT_KEY);
         if(StringUtils.isNotBlank(json)){
             EasyUIResult result = JsonUtils.jsonToPojo(json, EasyUIResult.class);
             System.out.println("缓存中取数据");
@@ -47,7 +47,7 @@ public class ContentServiceImpl implements ContentService {
         /**
          * 数据存入redis缓存
          */
-        jedisClient.set(CONTENT_KEY, JsonUtils.objectToJson(result));
+        JedisUtil.set(CONTENT_KEY, JsonUtils.objectToJson(result));
         System.out.println("缓存中存数据");
         return result;
     }
@@ -64,7 +64,7 @@ public class ContentServiceImpl implements ContentService {
     @Override
     public List<TbContent> getContentAll(Long contentCategoryId) {
 
-        String json = jedisClient.get(CONTENT_KEY);
+        String json = JedisUtil.get(ITEM_KEY);
         if(StringUtils.isNotBlank(json)){
             List<TbContent> contents = JsonUtils.jsonToList(json, TbContent.class);
             System.out.println("缓存中取数据");
@@ -74,7 +74,7 @@ public class ContentServiceImpl implements ContentService {
         /**
          * 数据存入redis缓存
          */
-        jedisClient.set(CONTENT_KEY, JsonUtils.objectToJson(contents));
+        JedisUtil.set(ITEM_KEY, JsonUtils.objectToJson(contents));
         System.out.println("缓存中存数据");
         return contents;
     }

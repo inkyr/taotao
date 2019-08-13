@@ -4,6 +4,8 @@ import com.taotao.common.pojo.EasyUIResult;
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemDesc;
+import com.taotao.pojo.TbItemParam;
+import com.taotao.pojo.TbItemParamItem;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -72,20 +74,21 @@ public class ItemController {
     }
 
     /**
-     * 添加商品信息
+     * 商品信息
      *
      * @param tbItem
-     * @param tbItemDesc
+     * @param desc
+     * @param itemParams
      * @return
      */
     @RequestMapping("/item/save")
     @ResponseBody
-    public TaotaoResult addItem(TbItem tbItem, TbItemDesc tbItemDesc) {
-        TaotaoResult result = itemService.addItem(tbItem, tbItemDesc);
+    public TaotaoResult addItem(TbItem tbItem, String desc, String itemParams) {
+        TaotaoResult result = itemService.addItem(tbItem, desc, itemParams);
         return result;
     }
 
-    @RequestMapping("/rest/item/query/item/desc/{itemId}")
+    @RequestMapping(value = "/rest/item/query/item/desc/{itemId}")
     @ResponseBody
     public TaotaoResult findItemDescById(@PathVariable("itemId") Long itemId) {
         TaotaoResult result = itemService.findItemDescById(itemId);

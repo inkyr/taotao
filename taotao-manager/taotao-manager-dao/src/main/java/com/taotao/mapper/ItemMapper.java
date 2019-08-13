@@ -1,10 +1,8 @@
 package com.taotao.mapper;
 
 import com.taotao.pojo.TbItem;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import com.taotao.pojo.TbItemDesc;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -27,4 +25,11 @@ public interface ItemMapper {
 
     @Insert("INSERT INTO tbitem (id, title, sellPoint, price, num, barcode, image, cid, status, created, updated) VALUES (#{id}, #{title}, #{sellPoint}, #{price}, #{num}, #{barcode}, #{image}, #{cid}, #{status}, #{created}, #{updated})")
     int addItem(TbItem tbItem);
+
+    @Select("SELECT * FROM tbitem WHERE id = #{itemId}")
+    TbItem getItemById(Long itemId);
+
+    @Select("SELECT * from tbitemdesc WHERE itemId = #{itemId}")
+    TbItemDesc getItemDescById(Long itemId);
+
 }

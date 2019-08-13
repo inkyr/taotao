@@ -7,8 +7,11 @@ import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.IDUtils;
 import com.taotao.mapper.ItemDescMapper;
 import com.taotao.mapper.ItemMapper;
+import com.taotao.mapper.ItemParamItemMapper;
 import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemDesc;
+import com.taotao.pojo.TbItemParam;
+import com.taotao.pojo.TbItemParamItem;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
@@ -27,6 +30,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemDescMapper itemDescMapper;
+
+    @Autowired
+    private ItemParamItemMapper itemParamItemMapper;
 
     @Autowired
     private JmsTemplate jmsTemplate;
@@ -78,7 +84,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public TaotaoResult addItem(TbItem tbItem, TbItemDesc tbItemDesc) {
+    public TaotaoResult addItem(TbItem tbItem, String desc, String itemParams) {
         final long itemId = IDUtils.genItemId();
         tbItem.setId(itemId);
         tbItem.setStatus((byte) 1);
@@ -87,12 +93,21 @@ public class ItemServiceImpl implements ItemService {
         tbItem.setUpdated(date);
         int i = itemMapper.addItem(tbItem);
 
+        TbItemDesc tbItemDesc = new TbItemDesc();
+        tbItemDesc.setItemDesc(desc);
         tbItemDesc.setItemId(itemId);
         tbItemDesc.setCreated(date);
         tbItemDesc.setUpdated(date);
         int k = itemDescMapper.addItemDesc(tbItemDesc);
 
-        if(i != 0 && k != 0){
+        TbItemParamItem tbItemParamItem = new TbItemParamItem();
+        tbItemParamItem.setParamData(itemParams);
+        tbItemParamItem.setItemId(tbItem.getId());
+        tbItemParamItem.setCreated(date);
+        tbItemParamItem.setUpdated(date);
+        int j = itemParamItemMapper.addItemParamItem(tbItemParamItem);
+
+        if (i != 0 && k != 0 && j != 0) {
             jmsTemplate.send(topicDestination, new MessageCreator() {
                 @Override
                 public Message createMessage(Session session) throws JMSException {
@@ -108,9 +123,21 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public TaotaoResult findItemDescById(Long itemId) {
         TbItemDesc itemDesc = itemDescMapper.findItemDescById(itemId);
-        if(itemDesc != null){
+        if (itemDesc != null) {
             return TaotaoResult.build(200, "ok", itemDesc);
         }
         return null;
     }
+
+    @Override
+    public TbItem getItemById(Long itemId) {
+        return itemMapper.getItemById(itemId);
+    }
+
+    @Override
+    public TbItemDesc getItemDescById(Long itemId) {
+        return itemMapper.getItemDescById(itemId);
+    }
+
+
 }

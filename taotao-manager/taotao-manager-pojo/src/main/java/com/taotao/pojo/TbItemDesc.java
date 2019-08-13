@@ -11,7 +11,7 @@ public class TbItemDesc implements Serializable{
 
     private Date updated;
 
-    private String desc;
+    private String itemDesc;
 
 
 	public Long getItemId() {
@@ -38,12 +38,12 @@ public class TbItemDesc implements Serializable{
 		this.updated = updated;
 	}
 
-	public String getDesc() {
-		return desc;
+	public String getItemDesc() {
+		return itemDesc;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setItemDesc(String itemDesc) {
+		this.itemDesc = itemDesc;
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class TbItemDesc implements Serializable{
 				"itemId=" + itemId +
 				", created=" + created +
 				", updated=" + updated +
-				", desc='" + desc + '\'' +
+				", desc='" + itemDesc + '\'' +
 				'}';
 	}
 }

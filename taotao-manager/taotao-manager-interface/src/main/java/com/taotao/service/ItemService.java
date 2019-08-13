@@ -4,6 +4,7 @@ import com.taotao.pojo.TbItem;
 import com.taotao.common.pojo.EasyUIResult;
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.pojo.TbItemDesc;
+import com.taotao.pojo.TbItemParamItem;
 
 public interface ItemService {
 
@@ -17,7 +18,11 @@ public interface ItemService {
 
     TaotaoResult updateUpItem(Long[] ids);
 
-    TaotaoResult addItem(TbItem tbItem, TbItemDesc tbItemDesc);
+    TaotaoResult addItem(TbItem tbItem, String desc, String itemParams);
 
     TaotaoResult findItemDescById(Long itemId);
+
+    TbItem getItemById(Long itemId);
+
+    TbItemDesc getItemDescById(Long itemId);
 }
