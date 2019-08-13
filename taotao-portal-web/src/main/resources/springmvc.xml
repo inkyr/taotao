@@ -15,7 +15,27 @@
 
     <context:property-placeholder location="classpath:*.properties" ignore-unresolvable="true"/>
     <context:component-scan base-package="com.taotao.portal.controller"/>
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven >
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8"/>
+                <property name="supportedMediaTypes">
+                    <list>
+                        <bean class="org.springframework.http.MediaType">
+                            <constructor-arg index="0" value="text"/>
+                            <constructor-arg index="1" value="plain"/>
+                            <constructor-arg index="2" value="UTF-8"/>
+                        </bean>
+                        <bean class="org.springframework.http.MediaType">
+                            <constructor-arg index="0" value="*"/>
+                            <constructor-arg index="1" value="*"/>
+                            <constructor-arg index="2" value="UTF-8"/>
+                        </bean>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
@@ -30,6 +50,7 @@
     <dubbo:registry protocol="zookeeper" address="116.62.109.157:2181"/>
 
     <dubbo:reference interface="com.taotao.content.service.ContentService" id="contentService"/>
+    <dubbo:reference interface="com.taotao.service.ItemCatService" id="itemCatService"/>
 
 
 </beans>
