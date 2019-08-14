@@ -14,6 +14,13 @@ public class JedisUtil {
         return result;
     }
 
+    public static Long del(String key) {
+        Jedis jedis = jedisPool.getResource();
+        Long result = jedis.del(key);
+        jedis.close();
+        return result;
+    }
+
     public static String get(String key) {
         Jedis jedis = jedisPool.getResource();
         String result = jedis.get(key);
