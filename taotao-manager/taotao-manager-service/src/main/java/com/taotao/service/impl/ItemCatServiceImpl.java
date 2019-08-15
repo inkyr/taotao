@@ -2,10 +2,13 @@ package com.taotao.service.impl;
 
 import com.taotao.common.pojo.ItemCat;
 import com.taotao.common.pojo.ItemCatResult;
+import com.taotao.common.utils.JedisUtil;
+import com.taotao.common.utils.JsonUtils;
 import com.taotao.mapper.ItemCatMapper;
 import com.taotao.pojo.TbItemCat;
 import com.taotao.service.ItemCatService;
 import com.taotao.common.pojo.EasyUITreeNode;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

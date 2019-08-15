@@ -2,6 +2,7 @@ package com.taotao.portal.controller;
 
 import com.taotao.common.pojo.EasyUIResult;
 import com.taotao.common.pojo.ItemCatResult;
+import com.taotao.common.utils.JedisUtil;
 import com.taotao.common.utils.JsonUtils;
 import com.taotao.content.service.ContentService;
 import com.taotao.pojo.TbContent;
@@ -9,6 +10,7 @@ import com.taotao.portal.pojo.Ad1Node;
 import com.taotao.service.ItemCatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -61,11 +63,10 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping("/item/cat/itemcat/all")
+    @RequestMapping(value = "/item/cat/itemcat/all")
     @ResponseBody
     public String queryAll(String callback) {
         ItemCatResult result = itemCatService.getItemCatAll(0L);
-        String str = callback + "(" + JsonUtils.objectToJson(result) + ");";
-        return str;
+        return callback + "(" + JsonUtils.objectToJson(result) + ");";
     }
 }

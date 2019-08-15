@@ -1,5 +1,6 @@
 package com.taotao.controller;
 
+import com.taotao.common.utils.JedisUtil;
 import com.taotao.service.ItemCatService;
 import com.taotao.common.pojo.EasyUITreeNode;
 import org.springframework.beans.factory.annotation.Autowired;

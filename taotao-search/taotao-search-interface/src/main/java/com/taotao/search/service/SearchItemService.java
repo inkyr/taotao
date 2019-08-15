@@ -3,6 +3,7 @@ package com.taotao.search.service;
 import com.taotao.common.pojo.SearchItem;
 import com.taotao.common.pojo.SearchResult;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.pojo.TbItemCat;
 
 public interface SearchItemService {
 
@@ -18,4 +19,8 @@ public interface SearchItemService {
     SearchResult search(String queryString, int page, int rows);
 
     void addDocument(SearchItem itemById);
+
+    SearchResult searchProducts(String name, int page, int rows);
+
+    TbItemCat getItemCatById(Long id);
 }

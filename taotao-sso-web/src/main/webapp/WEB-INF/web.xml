@@ -6,6 +6,7 @@
     <display-name>taotao-sso-web</display-name>
     <welcome-file-list>
         <welcome-file>login.html</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
     <!-- 解决post乱码 -->
     <filter>

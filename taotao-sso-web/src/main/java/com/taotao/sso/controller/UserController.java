@@ -47,8 +47,14 @@ public class UserController {
     @ResponseBody
     public String login(String userName, String passWord, String callback, HttpServletRequest request, HttpServletResponse response) {
         TaotaoResult result = userService.login(userName, passWord);
+        if(result.getStatus() == 400) {
+            if (callback != null) {
+                return callback + "(" + JsonUtils.objectToJson(result) + ");";
+            }
+            return JsonUtils.objectToJson(result);
+        }
         CookieUtils.setCookie(request, response, "TT_TOKEN", result.getData().toString());
-        if(callback != null){
+        if (callback != null) {
             return callback + "(" + JsonUtils.objectToJson(result) + ");";
         }
         return JsonUtils.objectToJson(result);
@@ -64,13 +70,12 @@ public class UserController {
         return JsonUtils.objectToJson(result);
     }
 
-    @RequestMapping(value = "/logout/{token}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE + ";charset=utf-8")
-    @ResponseBody
+    @RequestMapping(value = "/logout/{token}", method = RequestMethod.GET)
     public String logout(@PathVariable("token") String token, String callback) {
         TaotaoResult result = userService.logout(token);
         if(callback != null){
             return callback + "(" + JsonUtils.objectToJson(result) + ");";
         }
-        return JsonUtils.objectToJson(result);
+        return "login";
     }
 }
