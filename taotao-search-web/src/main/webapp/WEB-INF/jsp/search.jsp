@@ -69,6 +69,7 @@
 <!-- footer end -->
 <script type="text/javascript" src="/js/jquery.hashchange.js"></script>
 <script type="text/javascript" src="/js/search_main.js"></script>
+<script type="text/javascript" src="/js/home.js"></script>
 <script type="text/javascript">
 //${paginator.totalPages}
 SEARCH.query = "${query}";

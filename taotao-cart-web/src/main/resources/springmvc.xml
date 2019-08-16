@@ -49,7 +49,7 @@
     <dubbo:application name="inkyr-taotao-cart-web"/>
     <dubbo:registry protocol="zookeeper" address="116.62.109.157:2181"/>
 
-    <dubbo:reference interface="com.taotao.service.ItemCatService" id="itemCatService"/>
+    <dubbo:reference interface="com.taotao.service.ItemService" id="itemService"/>
 
 
 </beans>

@@ -49,7 +49,7 @@ public class JedisUtil {
         return result;
     }
 
-    public Long incr(String key) {
+    public static Long incr(String key) {
         Jedis jedis = jedisPool.getResource();
         Long result = jedis.incr(key);
         jedis.close();

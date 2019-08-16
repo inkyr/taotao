@@ -1,6 +1,6 @@
- /*
- Date: 2014-09-25 3:59:11 [PM] 
- */
+/*
+Date: 2014-09-25 3:59:11 [PM]
+*/
 function StringBuilder() {
     this.strings = new Array, this.length = 0
 }
@@ -127,20 +127,20 @@ function clothingAbTest() {
         }
         var j;
         if (text = String(text), cx.lastIndex = 0, cx.test(text) && (text = text.replace(cx, function(a) {
-            return "\\u" + ("0000" + a.charCodeAt(0).toString(16)).slice(-4)
-        })), /^[\],:{}\s]*$/.test(text.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, "@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, "]").replace(/(?:^|:|,)(?:\s*\[)+/g, "")))
+                return "\\u" + ("0000" + a.charCodeAt(0).toString(16)).slice(-4)
+            })), /^[\],:{}\s]*$/.test(text.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, "@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, "]").replace(/(?:^|:|,)(?:\s*\[)+/g, "")))
             return j = eval("(" + text + ")"), "function" == typeof reviver ? walk({"": j}, "") : j;
         throw new SyntaxError("JSON.parse")
     })
 }(), eval(function(a, b, c, d, e, f) {
     if (e = function(a) {
-        return (b > a ? "" : e(parseInt(a / b))) + ((a %= b) > 35 ? String.fromCharCode(a + 29) : a.toString(36))
-    }, !"".replace(/^/, String)) {
+            return (b > a ? "" : e(parseInt(a / b))) + ((a %= b) > 35 ? String.fromCharCode(a + 29) : a.toString(36))
+        }, !"".replace(/^/, String)) {
         for (; c--; )
             f[e(c)] = d[c] || e(c);
         d = [function(a) {
-                return f[a]
-            }], e = function() {
+            return f[a]
+        }], e = function() {
             return "\\w+"
         }, c = 1
     }
@@ -198,77 +198,77 @@ function clothingAbTest() {
             }), b
         };
         return h.prototype = {queryObject: !0,has: function(b, c) {
-                var d = this.get(b);
-                return a(d, c)
-            },GET: function(b) {
-                if (!a(b))
-                    return this.keys;
-                for (var c = d(b), e = c[0], f = c[1], g = this.keys[e]; null != g && 0 != f.length; )
-                    g = g[f.shift()];
-                return "number" == typeof g ? g : g || ""
-            },get: function(b) {
-                var c = this.GET(b);
-                return a(c, Object) ? jQuery.extend(!0, {}, c) : a(c, Array) ? c.slice(0) : c
-            },SET: function(b, c) {
-                var e = a(c) ? c : null, f = d(b), h = f[0], i = f[1], j = this.keys[h];
-                return this.keys[h] = g(j, i.slice(0), e), this
-            },set: function(a, b) {
-                return this.copy().SET(a, b)
-            },REMOVE: function(a) {
-                return this.SET(a, null).COMPACT()
-            },remove: function(a) {
-                return this.copy().REMOVE(a)
-            },EMPTY: function() {
-                var a = this;
-                return jQuery.each(a.keys, function(b) {
-                    delete a.keys[b]
-                }), a
-            },load: function(a) {
-                var b = a.replace(/^.*?[#](.+?)(?:\?.+)?$/, "$1"), c = a.replace(/^.*?[?](.+?)(?:#.+)?$/, "$1");
-                return new h(a.length == c.length ? "" : c, a.length == b.length ? "" : b)
-            },empty: function() {
-                return this.copy().EMPTY()
-            },copy: function() {
-                return new h(this)
-            },COMPACT: function() {
-                function b(c) {
-                    function d(b, c, d) {
-                        a(b, Array) ? b.push(d) : b[c] = d
-                    }
-                    var e = "object" == typeof c ? a(c, Array) ? [] : {} : c;
-                    return "object" == typeof c && jQuery.each(c, function(c, f) {
-                        return a(f) ? (d(e, c, b(f)), void 0) : !0
-                    }), e
+            var d = this.get(b);
+            return a(d, c)
+        },GET: function(b) {
+            if (!a(b))
+                return this.keys;
+            for (var c = d(b), e = c[0], f = c[1], g = this.keys[e]; null != g && 0 != f.length; )
+                g = g[f.shift()];
+            return "number" == typeof g ? g : g || ""
+        },get: function(b) {
+            var c = this.GET(b);
+            return a(c, Object) ? jQuery.extend(!0, {}, c) : a(c, Array) ? c.slice(0) : c
+        },SET: function(b, c) {
+            var e = a(c) ? c : null, f = d(b), h = f[0], i = f[1], j = this.keys[h];
+            return this.keys[h] = g(j, i.slice(0), e), this
+        },set: function(a, b) {
+            return this.copy().SET(a, b)
+        },REMOVE: function(a) {
+            return this.SET(a, null).COMPACT()
+        },remove: function(a) {
+            return this.copy().REMOVE(a)
+        },EMPTY: function() {
+            var a = this;
+            return jQuery.each(a.keys, function(b) {
+                delete a.keys[b]
+            }), a
+        },load: function(a) {
+            var b = a.replace(/^.*?[#](.+?)(?:\?.+)?$/, "$1"), c = a.replace(/^.*?[?](.+?)(?:#.+)?$/, "$1");
+            return new h(a.length == c.length ? "" : c, a.length == b.length ? "" : b)
+        },empty: function() {
+            return this.copy().EMPTY()
+        },copy: function() {
+            return new h(this)
+        },COMPACT: function() {
+            function b(c) {
+                function d(b, c, d) {
+                    a(b, Array) ? b.push(d) : b[c] = d
                 }
-                return this.keys = b(this.keys), this
-            },compact: function() {
-                return this.copy().COMPACT()
-            },toString: function() {
-                var c = [], d = [], f = function(b, c, d) {
-                    if (a(d) && d !== !1) {
-                        var e = [encodeURIComponent(c)];
-                        d !== !0 && (e.push("="), e.push(encodeURIComponent(d))), b.push(e.join(""))
-                    }
-                }, g = function(a, b) {
-                    var c = function(a) {
-                        return b && "" != b ? [b, "[", a, "]"].join("") : [a].join("")
-                    };
-                    jQuery.each(a, function(a, b) {
-                        "object" == typeof b ? g(b, c(a)) : f(d, c(a), b)
-                    })
+                var e = "object" == typeof c ? a(c, Array) ? [] : {} : c;
+                return "object" == typeof c && jQuery.each(c, function(c, f) {
+                    return a(f) ? (d(e, c, b(f)), void 0) : !0
+                }), e
+            }
+            return this.keys = b(this.keys), this
+        },compact: function() {
+            return this.copy().COMPACT()
+        },toString: function() {
+            var c = [], d = [], f = function(b, c, d) {
+                if (a(d) && d !== !1) {
+                    var e = [encodeURIComponent(c)];
+                    d !== !0 && (e.push("="), e.push(encodeURIComponent(d))), b.push(e.join(""))
+                }
+            }, g = function(a, b) {
+                var c = function(a) {
+                    return b && "" != b ? [b, "[", a, "]"].join("") : [a].join("")
                 };
-                return g(this.keys), d.length > 0 && c.push(e), c.push(d.join(b)), c.join("")
-            }}, new h(location.search, location.hash)
+                jQuery.each(a, function(a, b) {
+                    "object" == typeof b ? g(b, c(a)) : f(d, c(a), b)
+                })
+            };
+            return g(this.keys), d.length > 0 && c.push(e), c.push(d.join(b)), c.join("")
+        }}, new h(location.search, location.hash)
     }
 }(jQuery.query || {}), eval(function(a, b, c, d, e, f) {
     if (e = function(a) {
-        return (b > a ? "" : e(parseInt(a / b))) + ((a %= b) > 35 ? String.fromCharCode(a + 29) : a.toString(36))
-    }, !"".replace(/^/, String)) {
+            return (b > a ? "" : e(parseInt(a / b))) + ((a %= b) > 35 ? String.fromCharCode(a + 29) : a.toString(36))
+        }, !"".replace(/^/, String)) {
         for (; c--; )
             f[e(c)] = d[c] || e(c);
         d = [function(a) {
-                return f[a]
-            }], e = function() {
+            return f[a]
+        }], e = function() {
             return "\\w+"
         }, c = 1
     }
@@ -293,10 +293,10 @@ function clothingAbTest() {
 }, function($) {
     $.jmsajax = function(a) {
         var b = {type: "POST",dataType: "msjson",data: {},beforeSend: function(a) {
-                a.setRequestHeader("Content-type", "application/json; charset=utf-8")
-            },contentType: "application/json; charset=utf-8",error: function(a) {
-                alert("Status: " + (a.statusText ? a.statusText : "Unknown") + "\nMessage: " + msJSON.parse(a.responseText ? a.responseText : "Unknown").Message)
-            }}, a = $.extend(b, a);
+            a.setRequestHeader("Content-type", "application/json; charset=utf-8")
+        },contentType: "application/json; charset=utf-8",error: function(a) {
+            alert("Status: " + (a.statusText ? a.statusText : "Unknown") + "\nMessage: " + msJSON.parse(a.responseText ? a.responseText : "Unknown").Message)
+        }}, a = $.extend(b, a);
         if (a.method && (a.url += "/" + a.method), a.data)
             if ("GET" == a.type) {
                 var c = "";
@@ -363,30 +363,30 @@ function clothingAbTest() {
         }
         var cx = /[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g, escapeable = /[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g, gap, indent, meta = {"\b": "\\b","	": "\\t","\n": "\\n","\f": "\\f","\r": "\\r",'"': '\\"',"\\": "\\\\"}, rep;
         return {stringify: function(a, b, c) {
-                var d;
-                if (gap = "", indent = "", "number" == typeof c)
-                    for (d = 0; c > d; d += 1)
-                        indent += " ";
-                else
-                    "string" == typeof c && (indent = c);
-                if (rep = b, b && "function" != typeof b && ("object" != typeof b || "number" != typeof b.length))
-                    throw new Error("JSON.stringify");
-                return str("", {"": a})
-            },parse: function(text, reviver) {
-                function walk(a, b) {
-                    var c, d, e = a[b];
-                    if (e && "object" == typeof e)
-                        for (c in e)
-                            Object.hasOwnProperty.call(e, c) && (d = walk(e, c), void 0 !== d ? e[c] = d : delete e[c]);
-                    return reviver.call(a, b, e)
-                }
-                var j;
-                if (cx.lastIndex = 0, cx.test(text) && (text = text.replace(cx, function(a) {
+            var d;
+            if (gap = "", indent = "", "number" == typeof c)
+                for (d = 0; c > d; d += 1)
+                    indent += " ";
+            else
+                "string" == typeof c && (indent = c);
+            if (rep = b, b && "function" != typeof b && ("object" != typeof b || "number" != typeof b.length))
+                throw new Error("JSON.stringify");
+            return str("", {"": a})
+        },parse: function(text, reviver) {
+            function walk(a, b) {
+                var c, d, e = a[b];
+                if (e && "object" == typeof e)
+                    for (c in e)
+                        Object.hasOwnProperty.call(e, c) && (d = walk(e, c), void 0 !== d ? e[c] = d : delete e[c]);
+                return reviver.call(a, b, e)
+            }
+            var j;
+            if (cx.lastIndex = 0, cx.test(text) && (text = text.replace(cx, function(a) {
                     return "\\u" + ("0000" + (+a.charCodeAt(0)).toString(16)).slice(-4)
                 })), /^[\],:{}\s]*$/.test(text.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, "@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, "]").replace(/(?:^|:|,)(?:\s*\[)+/g, "")))
-                    return j = eval("(" + text + ")"), "function" == typeof reviver ? walk({"": j}, "") : j;
-                throw new SyntaxError("JSON.parse")
-            }}
+                return j = eval("(" + text + ")"), "function" == typeof reviver ? walk({"": j}, "") : j;
+            throw new SyntaxError("JSON.parse")
+        }}
     }()
 }(jQuery);
 var TrimPath;
@@ -414,22 +414,22 @@ var TrimPath;
     } catch (e) {
     }
     TrimPath.parseTemplate_etc = {}, TrimPath.parseTemplate_etc.statementTag = "forelse|for|if|elseif|else|var|macro", TrimPath.parseTemplate_etc.statementDef = {"if": {delta: 1,prefix: "if (",suffix: ") {",paramMin: 1},"else": {delta: 0,prefix: "} else {"},elseif: {delta: 0,prefix: "} else if (",suffix: ") {",paramDefault: "true"},"/if": {delta: -1,prefix: "}"},"for": {delta: 1,paramMin: 3,prefixFunc: function(a, b, c, d) {
-                if ("in" != a[2])
-                    throw new d.ParseError(c, b.line, "bad for loop statement: " + a.join(" "));
-                var e = a[1], f = "__LIST__" + e;
-                return ["var ", f, " = ", a[3], ";", "var __LENGTH_STACK__;", "if (typeof(__LENGTH_STACK__) == 'undefined' || !__LENGTH_STACK__.length) __LENGTH_STACK__ = new Array();", "__LENGTH_STACK__[__LENGTH_STACK__.length] = 0;", "if ((", f, ") != null) { ", "var ", e, "_ct = 0;", "for (var ", e, "_index in ", f, ") { ", e, "_ct++;", "if (typeof(", f, "[", e, "_index]) == 'function') {continue;}", "__LENGTH_STACK__[__LENGTH_STACK__.length - 1]++;", "var ", e, " = ", f, "[", e, "_index];"].join("")
-            }},forelse: {delta: 0,prefix: "} } if (__LENGTH_STACK__[__LENGTH_STACK__.length - 1] == 0) { if (",suffix: ") {",paramDefault: "true"},"/for": {delta: -1,prefix: "} }; delete __LENGTH_STACK__[__LENGTH_STACK__.length - 1];"},"var": {delta: 0,prefix: "var ",suffix: ";"},macro: {delta: 1,prefixFunc: function(a) {
-                var b = a[1].split("(")[0];
-                return ["var ", b, " = function", a.slice(1).join(" ").substring(b.length), "{ var _OUT_arr = []; var _OUT = { write: function(m) { if (m) _OUT_arr.push(m); } }; "].join("")
-            }},"/macro": {delta: -1,prefix: " return _OUT_arr.join(''); };"}}, TrimPath.parseTemplate_etc.modifierDef = {eat: function() {
-            return ""
-        },escape: function(a) {
-            return String(a).replace(/&/g, "&").replace(/</g, "<").replace(/>/g, ">")
-        },capitalize: function(a) {
-            return String(a).toUpperCase()
-        },"default": function(a, b) {
-            return null != a ? a : b
-        }}, TrimPath.parseTemplate_etc.modifierDef.h = TrimPath.parseTemplate_etc.modifierDef.escape, TrimPath.parseTemplate_etc.Template = function(a, b, c, d, e) {
+        if ("in" != a[2])
+            throw new d.ParseError(c, b.line, "bad for loop statement: " + a.join(" "));
+        var e = a[1], f = "__LIST__" + e;
+        return ["var ", f, " = ", a[3], ";", "var __LENGTH_STACK__;", "if (typeof(__LENGTH_STACK__) == 'undefined' || !__LENGTH_STACK__.length) __LENGTH_STACK__ = new Array();", "__LENGTH_STACK__[__LENGTH_STACK__.length] = 0;", "if ((", f, ") != null) { ", "var ", e, "_ct = 0;", "for (var ", e, "_index in ", f, ") { ", e, "_ct++;", "if (typeof(", f, "[", e, "_index]) == 'function') {continue;}", "__LENGTH_STACK__[__LENGTH_STACK__.length - 1]++;", "var ", e, " = ", f, "[", e, "_index];"].join("")
+    }},forelse: {delta: 0,prefix: "} } if (__LENGTH_STACK__[__LENGTH_STACK__.length - 1] == 0) { if (",suffix: ") {",paramDefault: "true"},"/for": {delta: -1,prefix: "} }; delete __LENGTH_STACK__[__LENGTH_STACK__.length - 1];"},"var": {delta: 0,prefix: "var ",suffix: ";"},macro: {delta: 1,prefixFunc: function(a) {
+        var b = a[1].split("(")[0];
+        return ["var ", b, " = function", a.slice(1).join(" ").substring(b.length), "{ var _OUT_arr = []; var _OUT = { write: function(m) { if (m) _OUT_arr.push(m); } }; "].join("")
+    }},"/macro": {delta: -1,prefix: " return _OUT_arr.join(''); };"}}, TrimPath.parseTemplate_etc.modifierDef = {eat: function() {
+        return ""
+    },escape: function(a) {
+        return String(a).replace(/&/g, "&").replace(/</g, "<").replace(/>/g, ">")
+    },capitalize: function(a) {
+        return String(a).toUpperCase()
+    },"default": function(a, b) {
+        return null != a ? a : b
+    }}, TrimPath.parseTemplate_etc.modifierDef.h = TrimPath.parseTemplate_etc.modifierDef.escape, TrimPath.parseTemplate_etc.Template = function(a, b, c, d, e) {
         this.process = function(a, b) {
             null == a && (a = {}), null == a._MODIFIERS && (a._MODIFIERS = {}), null == a.defined && (a.defined = function(b) {
                 return void 0 != a[b]
@@ -438,8 +438,8 @@ var TrimPath;
                 null == a._MODIFIERS[c] && (a._MODIFIERS[c] = e.modifierDef[c]);
             null == b && (b = {});
             var f = [], g = {write: function(a) {
-                    f.push(a)
-                }};
+                f.push(a)
+            }};
             try {
                 d(g, a, b)
             } catch (h) {
@@ -568,20 +568,20 @@ var TrimPath;
     }
 }(), function($) {
     $.extend({_jsonp: {scripts: {},counter: 1,charset: "UTF-8",head: document.getElementsByTagName("head")[0],name: function(callback) {
-                var name = "_jsonp_" + (new Date).getTime() + "_" + this.counter;
-                this.counter++;
-                var cb = function(json) {
-                    eval("delete " + name), callback(json), $._jsonp.head.removeChild($._jsonp.scripts[name]), delete $._jsonp.scripts[name]
-                };
-                return eval(name + " = cb"), name
-            },load: function(a, b) {
-                var c = document.createElement("script");
-                c.type = "text/javascript", c.charset = this.charset, c.src = a, this.head.appendChild(c), this.scripts[b] = c
-            }},
-          getJSONP: function(a, b) {
+        var name = "_jsonp_" + (new Date).getTime() + "_" + this.counter;
+        this.counter++;
+        var cb = function(json) {
+            eval("delete " + name), callback(json), $._jsonp.head.removeChild($._jsonp.scripts[name]), delete $._jsonp.scripts[name]
+        };
+        return eval(name + " = cb"), name
+    },load: function(a, b) {
+        var c = document.createElement("script");
+        c.type = "text/javascript", c.charset = this.charset, c.src = a, this.head.appendChild(c), this.scripts[b] = c
+    }},
+        getJSONP: function(a, b) {
             var c = $._jsonp.name(b), a = a.replace(/{callback};/, c);
             return $._jsonp.load(a, c), this
-          }})
+        }})
 }(jQuery), function(a) {
     a.fn.Jdropdown = function(b, c) {
         if (this.length) {
@@ -771,10 +771,10 @@ var TrimPath;
             return e(a.end) - e(a.server) - (e(b.end) - e(b.server))
         };
         a.ajax({url: "http://qiang.jd.com/HomePageNewLimitBuy.ashx?callback=?",data: {ids: d.pids},dataType: "jsonp",success: function(b) {
-                b && b.data && (b.data.sort(h), a.each(b.data, function(a) {
-                    g(a + 1, b.data[a])
-                })), c && c()
-            }})
+            b && b.data && (b.data.sort(h), a.each(b.data, function(a) {
+                g(a + 1, b.data[a])
+            })), c && c()
+        }})
     }
 }(jQuery), function(a) {
     a.fn.Jslider = function(b, c) {
@@ -828,8 +828,8 @@ var TrimPath;
     }
 }(jQuery), jQuery.fn.pagination = function(a, b) {
     return b = jQuery.extend({items_per_page: 10,num_display_entries: 10,current_page: 0,num_edge_entries: 0,link_to: "#",prev_text: "Prev",next_text: "Next",ellipse_text: "...",prev_show_always: !0,next_show_always: !0,callback: function() {
-            return !1
-        }}, b || {}), this.each(function() {
+        return !1
+    }}, b || {}), this.each(function() {
         function c() {
             return Math.ceil(a / b.items_per_page)
         }
@@ -884,17 +884,17 @@ var TrimPath;
     })
 }, function(a) {
     a.extend(a.browser, {client: function() {
-            return {width: document.documentElement.clientWidth,height: document.documentElement.clientHeight,bodyWidth: document.body.clientWidth,bodyHeight: document.body.clientHeight}
-        },scroll: function() {
-            var a = document.documentElement.scrollTop, b = document.body.scrollTop, c = document.documentElement.scrollLeft, d = document.body.scrollLeft, e = a ? a : b, f = c ? c : d;
-            return {width: document.documentElement.scrollWidth,height: document.documentElement.scrollHeight,bodyWidth: document.body.scrollWidth,bodyHeight: document.body.scrollHeight,left: f,top: e}
-        },screen: function() {
-            return {width: window.screen.width,height: window.screen.height}
-        },isIE6: a.browser.msie && 6 == a.browser.version,isMinW: function(b) {
-            return Math.min(a.browser.client().bodyWidth, a.browser.client().width) <= b
-        },isMinH: function(b) {
-            return a.browser.client().height <= b
-        }})
+        return {width: document.documentElement.clientWidth,height: document.documentElement.clientHeight,bodyWidth: document.body.clientWidth,bodyHeight: document.body.clientHeight}
+    },scroll: function() {
+        var a = document.documentElement.scrollTop, b = document.body.scrollTop, c = document.documentElement.scrollLeft, d = document.body.scrollLeft, e = a ? a : b, f = c ? c : d;
+        return {width: document.documentElement.scrollWidth,height: document.documentElement.scrollHeight,bodyWidth: document.body.scrollWidth,bodyHeight: document.body.scrollHeight,left: f,top: e}
+    },screen: function() {
+        return {width: window.screen.width,height: window.screen.height}
+    },isIE6: a.browser.msie && 6 == a.browser.version,isMinW: function(b) {
+        return Math.min(a.browser.client().bodyWidth, a.browser.client().width) <= b
+    },isMinH: function(b) {
+        return a.browser.client().height <= b
+    }})
 }(jQuery), function(a) {
     a.fn.jdPosition = function(b) {
         var c = a.extend({mode: null}, b || {});
@@ -960,8 +960,8 @@ var TrimPath;
         }, n = function() {
             var b = 2 * e._thickPadding + parseInt(e.width);
             if (a(".thickcon").css({width: e.width,height: e.height,paddingLeft: e._thickPadding,paddingRight: e._thickPadding}), setTimeout(function() {
-                a(".thickbox").css({width: b + 2 * e._wrapBorder,height: parseInt(e._titleOn ? a(".thicktitle").outerHeight() : 0) + parseInt(a(".thickcon").outerHeight()) + 2 * e._wrapBorder})
-            }, 100), a(".thickbox").jdPosition({mode: "center"}), a.browser.isIE6) {
+                    a(".thickbox").css({width: b + 2 * e._wrapBorder,height: parseInt(e._titleOn ? a(".thicktitle").outerHeight() : 0) + parseInt(a(".thickcon").outerHeight()) + 2 * e._wrapBorder})
+                }, 100), a(".thickbox").jdPosition({mode: "center"}), a.browser.isIE6) {
                 {
                     var c = a(".thickbox").outerWidth(), d = a(".thickbox").outerHeight(), f = a.browser.isMinW(c);
                     a.browser.isMinH(d)
@@ -1083,75 +1083,75 @@ var TrimPath;
             return new Date(c[0], c[1] - 1, c[2], d[0], d[1], d[2])
         };
         a.ajax({url: d,dataType: "jsonp",success: function(b) {
-                b && (c = b.data, a.each(c, function(a) {
-                    f(c[a])
-                }))
-            }})
+            b && (c = b.data, a.each(c, function(a) {
+                f(c[a])
+            }))
+        }})
     }
 }(jQuery);
 var jdRecent = {element: $("#recent ul"),jsurl: "http://www.jd.com/lishiset.aspx?callback=jdRecent.setData&id=",cookiename: "_recent",list: $.cookie("_recent"),url: location.href,init: function() {
-        var a = this.url.match(/\/(\d{6}).html/), b = null != a && -1 != a[0].indexOf("html") ? a[1] : "";
-        if (this.list && null != this.list && "" != this.list)
-            "" == b || -1 != this.list.indexOf(b) ? this.list = this.list : (this.list.split(".").length >= 10 && (this.list = this.list.replace(/.\d+$/, "")), this.list = b + "." + this.list);
-        else {
-            if ("" == b)
-                return this.getData(0);
-            this.list = b
-        }
-        $.cookie(this.cookiename, this.list, {expires: 7,path: "/",domain: "jd.com",secure: !1}), this.getData(this.list)
-    },clear: function() {
-        $.cookie(this.cookiename, "", {expires: 7,path: "/",domain: "jd.com",secure: !1})
-    },getData: function(a) {
-        if (0 == a)
-            return this.element.html("<li><div class='norecode'>\u6682\u65e0\u8bb0\u5f55!</div></li>"), void 0;
-        var b = a.split(".");
-        for (i in b)
-            0 == i && this.element.empty(), $.getJSONP(this.jsurl + b[i], this.setData)
-    },setData: function(a) {
-        this.element.append("<li><div class='p-img'><a href='" + a.url + "'><img src='" + a.img + "' /></a></div><div class='p-name'><a href='" + a.url + "'>" + decodeURIComponent(a.name) + "</a></div></li>")
-    }};
+    var a = this.url.match(/\/(\d{6}).html/), b = null != a && -1 != a[0].indexOf("html") ? a[1] : "";
+    if (this.list && null != this.list && "" != this.list)
+        "" == b || -1 != this.list.indexOf(b) ? this.list = this.list : (this.list.split(".").length >= 10 && (this.list = this.list.replace(/.\d+$/, "")), this.list = b + "." + this.list);
+    else {
+        if ("" == b)
+            return this.getData(0);
+        this.list = b
+    }
+    $.cookie(this.cookiename, this.list, {expires: 7,path: "/",domain: "jd.com",secure: !1}), this.getData(this.list)
+},clear: function() {
+    $.cookie(this.cookiename, "", {expires: 7,path: "/",domain: "jd.com",secure: !1})
+},getData: function(a) {
+    if (0 == a)
+        return this.element.html("<li><div class='norecode'>\u6682\u65e0\u8bb0\u5f55!</div></li>"), void 0;
+    var b = a.split(".");
+    for (i in b)
+        0 == i && this.element.empty(), $.getJSONP(this.jsurl + b[i], this.setData)
+},setData: function(a) {
+    this.element.append("<li><div class='p-img'><a href='" + a.url + "'><img src='" + a.img + "' /></a></div><div class='p-name'><a href='" + a.url + "'>" + decodeURIComponent(a.name) + "</a></div></li>")
+}};
 $("#clearRec").click(function() {
     jdRecent.clear(), jdRecent.getData(0)
 }), mlazyload({defObj: "#recent",defHeight: 50,fn: function() {
-        1 == jdRecent.element.length && jdRecent.init()
-    }});
+    1 == jdRecent.element.length && jdRecent.init()
+}});
 var jdModelCallCenter = {settings: {clstag1: 0,clstag2: 0},tbClose: function() {
-        0 != $(".thickbox").length && jdThickBoxclose()
-    },login: function() {
-        this.tbClose();
-        var a = this, b = navigator.userAgent.toLowerCase(), c = "ucweb" == b.match(/ucweb/i) || "rv:1.2.3.4" == b.match(/rv:1.2.3.4/i);
-        return c ? (location.href = "https://passport." + pageConfig.FN_getDomain() + "/new/login.aspx?ReturnUrl=" + escape(location.href), void 0) : (setTimeout(function() {
-            $.jdThickBox({type: "iframe",title: "\u60a8\u5c1a\u672a\u767b\u5f55",source: "http://passport.jd.com/uc/popupLogin2013?clstag1=" + a.settings.clstag1 + "&clstag2=" + a.settings.clstag2 + "&r=" + Math.random(),width: 390,height: 450,_title: "thicktitler",_close: "thickcloser",_con: "thickconr"})
-        }, 20), void 0)
-    },regist: function() {
-        var a = this;
-        this.tbClose(), setTimeout(function() {
-            $.jdThickBox({type: "iframe",title: "\u60a8\u5c1a\u672a\u767b\u5f55",source: "http://reg.jd.com/reg/popupPerson?clstag1=" + a.settings.clstag1 + "&clstag2=" + a.settings.clstag2 + "&r=" + Math.random(),width: 390,height: 450,_title: "thicktitler",_close: "thickcloser",_con: "thickconr"})
-        }, 20)
-    },init: function() {
+    0 != $(".thickbox").length && jdThickBoxclose()
+},login: function() {
+    this.tbClose();
+    var a = this, b = navigator.userAgent.toLowerCase(), c = "ucweb" == b.match(/ucweb/i) || "rv:1.2.3.4" == b.match(/rv:1.2.3.4/i);
+    return c ? (location.href = "https://passport." + pageConfig.FN_getDomain() + "/new/login.aspx?ReturnUrl=" + escape(location.href), void 0) : (setTimeout(function() {
+        $.jdThickBox({type: "iframe",title: "\u60a8\u5c1a\u672a\u767b\u5f55",source: "http://passport.jd.com/uc/popupLogin2013?clstag1=" + a.settings.clstag1 + "&clstag2=" + a.settings.clstag2 + "&r=" + Math.random(),width: 390,height: 450,_title: "thicktitler",_close: "thickcloser",_con: "thickconr"})
+    }, 20), void 0)
+},regist: function() {
+    var a = this;
+    this.tbClose(), setTimeout(function() {
+        $.jdThickBox({type: "iframe",title: "\u60a8\u5c1a\u672a\u767b\u5f55",source: "http://reg.jd.com/reg/popupPerson?clstag1=" + a.settings.clstag1 + "&clstag2=" + a.settings.clstag2 + "&r=" + Math.random(),width: 390,height: 450,_title: "thicktitler",_close: "thickcloser",_con: "thickconr"})
+    }, 20)
+},init: function() {
 //        var a = this;
 //        $.ajax({url: ("https:" == document.location.protocol ? "https://" : "http://") + "passport." + pageConfig.FN_getDomain() + "/new/helloService.ashx?m=ls&sso=0",dataType: "jsonp",success: function(b) {
 //                a.tbClose(), b && b.info && $("#loginbar").html(b.info), a.settings.fn()
 //            }})
-    }};
+}};
 $.extend(jdModelCallCenter, {autoLocation: function(a) {
-        $.login({modal: !0,complete: function(b) {
-                null != b && null != b.IsAuthenticated && b.IsAuthenticated && (window.location = a)
-            }})
-    }}), $.extend(jdModelCallCenter, {doAttention: function(a) {
-        var b = "http://t.jd.com/product/followProduct.action?productId=" + a;
-        $.login({modal: !0,complete: function(a) {
-                if (null != a && null != a.IsAuthenticated && a.IsAuthenticated) {
-                    var c = 510, d = 440;
-                    $.jdThickBox({type: "iframe",source: b + "&t=" + Math.random(),width: c,height: d,title: "\u63d0\u793a",_box: "attboxr",_con: "attconr",_countdown: !1}, function() {
-                    })
-                }
-            }})
-    }}), $(".btn-coll").livequery("click", function() {
+    $.login({modal: !0,complete: function(b) {
+        null != b && null != b.IsAuthenticated && b.IsAuthenticated && (window.location = a)
+    }})
+}}), $.extend(jdModelCallCenter, {doAttention: function(a) {
+    var b = "http://t.jd.com/product/followProduct.action?productId=" + a;
+    $.login({modal: !0,complete: function(a) {
+        if (null != a && null != a.IsAuthenticated && a.IsAuthenticated) {
+            var c = 510, d = 440;
+            $.jdThickBox({type: "iframe",source: b + "&t=" + Math.random(),width: c,height: d,title: "\u63d0\u793a",_box: "attboxr",_con: "attconr",_countdown: !1}, function() {
+            })
+        }
+    }})
+}}), $(".btn-coll").livequery("click", function() {
     var a = $(this), b = parseInt(a.attr("id").replace("coll", ""));
     $.extend(jdModelCallCenter.settings, {clstag1: "login|keycount|5|3",clstag2: "login|keycount|5|4",id: b,fn: function() {
-            jdModelCallCenter.doAttention(this.id)
-        }}), jdModelCallCenter.settings.fn()
+        jdModelCallCenter.doAttention(this.id)
+    }}), jdModelCallCenter.settings.fn()
 }), "undefined" != typeof pageConfig && (pageConfig.isHome = function() {
     return pageConfig.navId && "home" == pageConfig.navId && location.href.indexOf("www.jd.com") >= 0
 }()), $.bigiframe = function(a, b, c) {
@@ -1170,20 +1170,20 @@ $.extend(jdModelCallCenter, {autoLocation: function(a) {
 };
 //http://d.360buy.com/configs/get?type=JSON
 var category = {OBJ: $("#_JD_ALLSORT"),
-		//URL_Serv: "http://manage.taotao.com/web/itemcat/all?callback=category.getDataService",
-		URL_Serv: "http://localhost:8082/item/cat/itemcat/all.html?callback=category.getDataService",
-		//URL_Serv: "http://localhost:8082/category.json",
-		URL_BrandsServ: "http://d.360buy.com/brandVclist2/get?callback=category.getBrandService&ids=a,9211,9212^b,9214,9215^c,9217,9218^d,9220,9221^e,9223,9224^f,9226,9227^g,9229,9230^h,9232,9233^m,9235,9236^i,9238,9239^j,9241,9242^p,9244,9245^k,9247,9248^l,9250,9251",
-		FN_GetLink: function(a, b) {
-	        var c, d;
-	        switch (a) {
-	            case 1:
-	                c = b.u, d = b.n;
-	                break;
-	            case 2:
-	                c = b.split("|")[0], d = b.split("|")[1]
-	        }
-        return "" == c ? d : (/^http[s]?:\/\/([\w-]+\.)+[\w-]+([\w-.\/?%&=]*)?$/.test(c) || (c = c.replace(/-000$/, ""), c = c.match(/^\d*-\d*$/) ? "http://channel.jd.com/" + c + ".html" : "http://localhost:8085" + c), '<a href="' + c + '">' + d + "</a>")
+    URL_Serv: "http://localhost:8082/item/cat/itemcat/all.html?callback=category.getDataService",
+    //URL_Serv: "http://localhost:8082/item/cat/itemcat/all.html",
+    //URL_Serv: "http://localhost:8082/category.json",
+    URL_BrandsServ: "http://d.360buy.com/brandVclist2/get?callback=category.getBrandService&ids=a,9211,9212^b,9214,9215^c,9217,9218^d,9220,9221^e,9223,9224^f,9226,9227^g,9229,9230^h,9232,9233^m,9235,9236^i,9238,9239^j,9241,9242^p,9244,9245^k,9247,9248^l,9250,9251",
+    FN_GetLink: function(a, b) {
+        var c, d;
+        switch (a) {
+            case 1:
+                c = b.u, d = b.n;
+                break;
+            case 2:
+                c = b.split("|")[0], d = b.split("|")[1]
+        }
+        return "" == c ? d : (/^http[s]?:\/\/([\w-]+\.)+[\w-]+([\w-.\/?%&=]*)?$/.test(c) || (c = c.replace(/-000$/, ""), c = c.match(/^\d*-\d*$/) ? "http://channel.jd.com/" + c + ".html" : "http://www.taotao.com" + c + ".html"), '<a href="' + c + '">' + d + "</a>")
     },FN_SetLink: function(a) {
         var b = "", c = pageConfig.isHome ? 'clstag="homepage|keycount|home2013|0604e"' : "", d = pageConfig.isHome ? 'clstag="homepage|keycount|home2013|0603e"' : "", e = pageConfig.isHome ? 'clstag="homepage|keycount|home2013|0605e"' : "";
         switch (a) {
@@ -1198,19 +1198,20 @@ var category = {OBJ: $("#_JD_ALLSORT"),
         }
         return b
     },DATA_Simple: {1: [{l: "http://book.jd.com/",n: "\u56fe\u4e66"}, {l: "http://mvd.jd.com/",n: "\u97f3\u50cf"}, {l: "http://e.jd.com/",n: "\u6570\u5b57\u5546\u54c1"}],2: [{l: "http://channel.jd.com/electronic.html",n: "\u5bb6\u7528\u7535\u5668"}],3: [{l: "http://shouji.jd.com/",n: "\u624b\u673a"}, {l: "http://channel.jd.com/digital.html",n: "\u6570\u7801"}, {l: "http://mobile.jd.com/index.do",n: "\u4eac\u4e1c\u901a\u4fe1"}],4: [{l: "http://channel.jd.com/computer.html",n: "\u7535\u8111\u3001\u529e\u516c"}],5: [{l: "http://channel.jd.com/home.html",n: "\u5bb6\u5c45"}, {l: "http://channel.jd.com/furniture.html",n: "\u5bb6\u5177"}, {l: "http://channel.jd.com/decoration.html",n: "\u5bb6\u88c5"}, {l: "http://channel.jd.com/kitchenware.html",n: "\u53a8\u5177"}],6: [{l: "http://channel.jd.com/1315-1342.html",n: "\u7537\u88c5"}, {l: "http://channel.jd.com/1315-1343.html",n: "\u5973\u88c5"}, {l: "http://channel.jd.com/1315-1345.html",n: "\u5185\u8863"}, {l: "http://channel.jd.com/jewellery.html",n: "\u73e0\u5b9d"}],7: [{l: "http://channel.jd.com/beauty.html",n: "\u4e2a\u62a4\u5316\u5986"}],8: [{l: "http://channel.jd.com/shoes.html",n: "\u978b\u9774"}, {l: "http://channel.jd.com/bag.html",n: "\u7bb1\u5305"}, {l: "http://channel.jd.com/watch.html",n: "\u949f\u8868"}, {l: "http://channel.jd.com/1672-2615.html",n: "\u5962\u4f88\u54c1"}],9: [{l: "http://channel.jd.com/sports.html",n: "\u8fd0\u52a8\u6237\u5916"}],10: [{l: "http://channel.jd.com/auto.html",n: "\u6c7d\u8f66\u7528\u54c1"}],11: [{l: "http://channel.jd.com/baby.html",n: "\u6bcd\u5a74"}, {l: "http://channel.jd.com/toys.html",n: "\u73a9\u5177\u4e50\u5668"}],12: [{l: "http://channel.jd.com/food.html",n: "\u98df\u54c1\u996e\u6599"}, {l: "http://channel.jd.com/wine.html",n: "\u9152\u7c7b"}, {l: "http://channel.jd.com/freshfood.html",n: "\u751f\u9c9c"}],13: [{l: "http://channel.jd.com/health.html",n: "\u8425\u517b\u4fdd\u5065"}],14: [{l: "http://caipiao.jd.com/",n: "\u5f69\u7968"}, {l: "http://trip.jd.com/",n: "\u65c5\u884c"}, {l: "http://chongzhi.jd.com/",n: "\u5145\u503c"}, {l: "http://piao.jd.com/",n: "\u7968\u52a1"}]},TPL_Simple: '{for item in data}<div class="item fore${parseInt(item_index)}">    <span data-split="1" {if pageConfig.isHome} clstag="homepage|keycount|home2013|06{if parseInt(item_index)+1>9}${parseInt(item_index)+1}{else}0${parseInt(item_index)+1}{/if}a"{/if}>        <h3>{for sItem in item}{if sItem_index!=0}\u3001{/if}<a href="${sItem.l}">${sItem.n}</a>{/for}</h3>        <s></s>    </span></div>{/for}<div class="extra"><a href="http://www.jd.com/allSort.aspx">\u5168\u90e8\u5546\u54c1\u5206\u7c7b</a></div>',FN_InitSimple: function() {
-       /* var a, b = {}, c = $("#categorys-2013");
-        b.data = this.DATA_Simple, c.addClass("categorys-2014"), a = this.TPL_Simple.process(b);
-        var d = $("#_JD_ALLSORT");
-        d.html(a), $.bigiframe(d)*/
+        /* var a, b = {}, c = $("#categorys-2013");
+         b.data = this.DATA_Simple, c.addClass("categorys-2014"), a = this.TPL_Simple.process(b);
+         var d = $("#_JD_ALLSORT");
+         d.html(a), $.bigiframe(d)*/
     },FN_GetData: function() {
-    	//使用jsonp来实现跨域请求
-        $.getJSONP(this.URL_Serv, category.getDataService);
-    	//直接使用ajax请求json数据
-    	/*$.getJSON(this.URL_Serv, function(json){
-    		category.getDataService(json);
-    	});*/
+        //使用jsonp来实现跨域请求
+         $.getJSONP(this.URL_Serv, category.getDataService);
+        //直接使用ajax请求json数据
+        // $.getJSON(this.URL_Serv, function(json){
+        //     category.getDataService(json);
+        // });
+
     },FN_GetBrands: function() {
-      //  $.getJSONP(this.URL_BrandsServ, category.getBrandService)
+         $.getJSONP(this.URL_BrandsServ, category.getBrandService)
     },FN_RefactorJSON: function(a, b) {
         for (var c = a.length / b, d = [], e = 0; c > e; e++)
             d.push({tabs: [],increment: null,count: b,skuids: []});
@@ -1221,7 +1222,7 @@ var category = {OBJ: $("#_JD_ALLSORT"),
         var b = '<div class="item fore${index+1}">    <span data-split="1" {if pageConfig.isHome}clstag="homepage|keycount|home2013|0${601+parseInt(index)}a"{/if}><h3>${n}</h3><s></s></span>    <div class="i-mc">        <div onclick="$(this).parent().parent().removeClass(\'hover\')" class="close">\xd7</div>        <div class="subitem" {if pageConfig.isHome}clstag="homepage|keycount|home2013|0${601+parseInt(index)}b"{/if}>            {for subitem in i}            <dl class="fore${parseInt(subitem_index)+1}">                <dt>${category.FN_GetLink(1,subitem)}</dt>                <dd>{for link in subitem.i}<em>${category.FN_GetLink(2,link)}</em>{/for}</dd>            </dl>            {/for} </div> </div></div>', c = '<div class="item item-col2 fore${index+1}">    <span data-split="1" {if pageConfig.isHome}clstag="homepage|keycount|home2013|0${601+parseInt(index)}a"{/if}><h3>${n}</h3><s></s></span>    <div class="i-mc">        <ul class="hide title-list lh">            <li class="fore1"><a href="http://chongzhi.jd.com/">\u5145\u503c\u7f34\u8d39</a></li>            <li class="fore2"><a href="http://caipiao.jd.com/">\u4eac\u4e1c\u5f69\u7968</a></li>            <li class="fore3"><a href="http://channel.jd.com/4938-12316.html">\u57f9\u8bad\u6559\u80b2</a></li>            <li class="fore4"><a href="http://jipiao.jd.com/ticketquery/flightHotcity.action">\u4f18\u9009\u673a\u7968</a></li>            <li class="fore5"><a href="http://channel.jd.com/4938-12300.html">\u65c5\u884c\u7b7e\u8bc1</a></li>            <li class="fore6"><a href="http://game.jd.com/">\u4eac\u4e1c\u6e38\u620f</a></li>        </ul>        <div onclick="$(this).parent().parent().removeClass(\'hover\')" class="close">\xd7</div>        <div class="subitem" {if pageConfig.isHome}clstag="homepage|keycount|home2013|0${601+parseInt(index)}b"{/if}>            {for item in i}            <div class="sub-item-col sub-item-col${item_index} fl">                {for subitem in item.tabs}                <dl class="fore${parseInt(subitem_index)+1}">                    <dt>${category.FN_GetLink(1,subitem)}</dt>                    <dd>{for link in subitem.i}<em>${category.FN_GetLink(2,link)}</em>{/for}</dd>                </dl>                {/for}					{if item_index==1}<div class="cat-right-con" id="JD_sort_${t}" clstag="homepage|keycount|home2013|0614c"><div class="loading-style1"><b></b>\u52a0\u8f7d\u4e2d\uff0c\u8bf7\u7a0d\u5019...</div></div>{/if}            </div>            {/for}        </div>    </div></div>';
         return "l" == a.t ? c.process(a) : b.process(a)
     },FN_GetBrands: function() {
-      //  $.getJSONP(this.URL_BrandsServ, category.getBrandService)
+        //  $.getJSONP(this.URL_BrandsServ, category.getBrandService)
     },getDataService: function(a) {
         var b = [], c = this;
         $.each(a.data, function(a) {
@@ -1230,8 +1231,8 @@ var category = {OBJ: $("#_JD_ALLSORT"),
         b.push('<div class="extra"><a {if pageConfig.isHome}clstag="homepage|keycount|home2013|0614a"{/if} href="http://www.jd.com/allSort.aspx">\u5168\u90e8\u5546\u54c1\u5206\u7c7b</a></div>'), this.OBJ.attr("load", "1").html(b.join("")), $.bigiframe(this.OBJ), this.FN_GetBrands();
         var d = this, e = this.OBJ.outerWidth(), f = this.OBJ.outerHeight();
         $("#_JD_ALLSORT").dropdown({delay: 0,onmouseleave: function() {
-                $("#_JD_ALLSORT .item").removeClass("hover")
-            }}, function(a) {
+            $("#_JD_ALLSORT .item").removeClass("hover")
+        }}, function(a) {
             var b, c, g = document.documentElement.scrollTop + document.body.scrollTop, h = $("#nav-2013").offset().top + 39;
             h >= g ? (c = a.hasClass("fore13") ? 3 : 3, g = c) : (b = a.offset().top, g = g > b - 5 ? b - h - 10 : Math.max(3, g - h));
             var i = a.find(".i-mc");
@@ -1266,122 +1267,122 @@ var category = {OBJ: $("#_JD_ALLSORT"),
             })
         }
     }}, UC = {DATA_Cookie: "aview",TPL_UnRegist: '<div class="prompt">            <span class="fl">\u60a8\u597d\uff0c\u8bf7<a href="javascript:login()" clstag="homepage|keycount|home2013|04a">\u767b\u5f55</a></span>            <span class="fr"></span>        </div>',TPL_Regist: '<div class="prompt">                <span class="fl"><strong>${Name}</strong></span>                <span class="fr"><a href="http://home.jd.com/">\u53bb\u6211\u7684\u4eac\u4e1c\u9996\u9875&nbsp;&gt;</a></span>            </div>',TPL_OList: {placeholder: '<div id="jduc-orderlist"></div>',fragment: '<div class="orderlist">                <div class="smt">                    <h4>\u6700\u65b0\u8ba2\u5355\u72b6\u6001\uff1a</h4>                    <div class="extra"><a href="http://order.jd.com/center/list.action" target="_blank">\u67e5\u770b\u6240\u6709\u8ba2\u5355&nbsp;&gt;</a></div>                </div>                <div class="smc">                    <ul>                        {for item in orderList}                        <li class="fore${parseInt(item_index)+1}">                            <div class="p-img fl">                                {for image in item.OrderDetail}                                    {if image_index<2}                                        <a href="http://www.jd.com/product/${image.ProductId}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(image.ProductId)}n5/${image.ImgUrl}" width="50" height="50" alt="${image.ProductName}" /></a>                                    {/if}                                {/for}                                {if item.OrderDetail.length>2}                                    <a href="${item.passKeyUrl}" target="_blank" class="more">\u66f4\u591a</a>                                {/if}                            </div>                            <div class="p-detail fr">                                \u8ba2\u5355\u53f7\uff1a${item.OrderId}<br />                                \u72b6\u3000\u6001\uff1a<span>${UC.FN_SetState(item.OrderState)}</span><br />                                \u3000\u3000\u3000\u3000<a href="${item.passKeyUrl}">\u67e5\u770b\u8be6\u60c5</a>                            </div>                        </li>                        {/for}                    </ul>                </div>            </div>'},TPL_UList: '<div class="uclist">                <ul class="fore1 fl">                    <li><a target="_blank" clstag="homepage|keycount|home2013|04b" href="http://order.jd.com/center/list.action">\u5f85\u5904\u7406\u8ba2\u5355<span id="num-unfinishedorder"></span></a></li>                    <li><a target="_blank" clstag="homepage|keycount|home2013|04c" href="http://jd2008.jd.com/user_spzx.aspx">\u54a8\u8be2\u56de\u590d<span id="num-consultation"></span></a></li>                    <li><a target="_blank" clstag="homepage|keycount|home2013|04d" href="http://t.jd.com/product/followProductList.action?isReduce=true">\u964d\u4ef7\u5546\u54c1<span id="num-reduction"></span></a></li>                    <li><a target="_blank" clstag="homepage|keycount|home2013|shouhou" href="http://myjd.jd.com/repair/orderlist.action">\u8fd4\u4fee\u9000\u6362\u8d27</a></li>                    <li><a target="_blank" clstag="homepage|keycount|home2013|04e" href="http://quan.jd.com/user_quan.action">\u4f18\u60e0\u5238<span id="num-ticket"></span></a></li>                </ul>                <ul class="fore2 fl">                    <li><a target="_blank" clstag="homepage|keycount|home2013|04i" href="http://t.jd.com/home/follow">\u6211\u7684\u5173\u6ce8&nbsp;&gt;</a></li>                    <li><a target="_blank" clstag="homepage|keycount|home2013|04g" href="http://bean.jd.com/myJingBean/list">\u6211\u7684\u4eac\u8c46&nbsp;&gt;</a></li>                    <li><a target="_blank" clstag="homepage|keycount|home2013|licai" href="http://trade.jr.jd.com/centre/browse.action">\u6211\u7684\u7406\u8d22&nbsp;&gt;</a></li>                    <li><a target="_blank" clstag="homepage|keycount|home2013|baitiao" href="http://baitiao.jd.com/creditUser/list">\u6211\u7684\u767d\u6761&nbsp;&gt;</a></li>                </ul>            </div>',TPL_VList: {placeholder: '<div class="viewlist">                <div class="smt" clstag="homepage|keycount|home2013|04k">                    <h4>\u6700\u8fd1\u6d4f\u89c8\u7684\u5546\u54c1\uff1a</h4>                    <div style="float:right;padding-right:9px;"><a style="border:0;color:#005EA7" href="http://my.jd.com/history/list.html" target="_blank">\u67e5\u770b\u6d4f\u89c8\u5386\u53f2&nbsp;&gt;</a></div>                </div>                <div class="smc" id="jduc-viewlist" clstag="homepage|keycount|home2013|04j">                    <div class="loading-style1"><b></b>\u52a0\u8f7d\u4e2d\uff0c\u8bf7\u7a0d\u5019...</div>                    <ul class="lh hide"></ul>                </div>            </div>',fragment: '{for item in list}<li><a href="http://item.jd.com/${item.wid}.html" target="_blank" title="${item.wname}"><img src="${pageConfig.FN_GetImageDomain(item.wid)}n5/${item.imgUrl}" width="50" height="50" alt="${item.wname}" /></a></li>{/for}'},FN_SetState: function(a) {
-        var a = a;
-        return a.length > 4 && (a = "<span title=" + a + ">" + a.substr(0, 4) + "...</span>"), a
-    },FN_InitNewVList: function(a) {
-        for (var b, c = a ? a.split("|") : [], d = c.length, e = [], f = 0; d > f; )
-            e.push(c[f].split(".")[1]), f++;
-        b = e.join(","), $.getJSONP("http://my.jd.com/product/info.html?ids=" + b + "&jsoncallback=UC.FN_ShowVList")
-    },FN_InitVList: function(a) {
-        for (var b = JSON.parse(a), c = b.length, d = ",", e = 0; c > e; e++)
-            new RegExp(b[e].s).test(d) || (d += b[e].s + ",");
-        d = d.replace(/(^,*)|(,*$)/g, ""), $.getJSONP("http://my.jd.com/product/info.html?ids=" + d + "&jsoncallback=UC.FN_ShowVList")
-    },FN_ShowVList: function(a) {
-        if (a) {
-            var b = $("#jduc-viewlist").find(".loading-style1");
-            a.length = a.length > 5 ? 5 : a.length;
-            var c = {list: a};
-            b.length > 0 && b.hide();
-            var d = this.TPL_VList.fragment.process(c);
-            $("#jduc-viewlist").find("ul").eq(0).html(d).show()
+    var a = a;
+    return a.length > 4 && (a = "<span title=" + a + ">" + a.substr(0, 4) + "...</span>"), a
+},FN_InitNewVList: function(a) {
+    for (var b, c = a ? a.split("|") : [], d = c.length, e = [], f = 0; d > f; )
+        e.push(c[f].split(".")[1]), f++;
+    b = e.join(","), $.getJSONP("http://my.jd.com/product/info.html?ids=" + b + "&jsoncallback=UC.FN_ShowVList")
+},FN_InitVList: function(a) {
+    for (var b = JSON.parse(a), c = b.length, d = ",", e = 0; c > e; e++)
+        new RegExp(b[e].s).test(d) || (d += b[e].s + ",");
+    d = d.replace(/(^,*)|(,*$)/g, ""), $.getJSONP("http://my.jd.com/product/info.html?ids=" + d + "&jsoncallback=UC.FN_ShowVList")
+},FN_ShowVList: function(a) {
+    if (a) {
+        var b = $("#jduc-viewlist").find(".loading-style1");
+        a.length = a.length > 5 ? 5 : a.length;
+        var c = {list: a};
+        b.length > 0 && b.hide();
+        var d = this.TPL_VList.fragment.process(c);
+        $("#jduc-viewlist").find("ul").eq(0).html(d).show()
+    }
+},FN_setWords: function(a) {
+    var b = '<font style="color:{0}">({1})</font>', c = "";
+    return c = 0 == a ? "#ccc" : "#c00", pageConfig.FN_StringFormat(b, c, a)
+},FN_InitOList: function() {
+    $.ajax({url: "http://minijd.360buy.com/getOrderList",dataType: "jsonp",success: function(a) {
+        if (a && 0 == a.error && a.orderList) {
+            var b = UC.TPL_OList.fragment.process(a);
+            $("#jduc-orderlist").html(b)
         }
-    },FN_setWords: function(a) {
-        var b = '<font style="color:{0}">({1})</font>', c = "";
-        return c = 0 == a ? "#ccc" : "#c00", pageConfig.FN_StringFormat(b, c, a)
-    },FN_InitOList: function() {
-        $.ajax({url: "http://minijd.360buy.com/getOrderList",dataType: "jsonp",success: function(a) {
-                if (a && 0 == a.error && a.orderList) {
-                    var b = UC.TPL_OList.fragment.process(a);
-                    $("#jduc-orderlist").html(b)
-                }
-            }}), $.ajax({url: "http://minijd.360buy.com/getHomeCount",dataType: "jsonp",success: function(a) {
-                a && 0 == a.error && $("#num-unfinishedorder").html(UC.FN_setWords(a.orderCount))
-            }}), $.ajax({url: "http://comm.360buy.com/index.php?mod=Consultation&action=havingReplyCount",dataType: "jsonp",success: function(a) {
-                a && $("#num-consultation").html(UC.FN_setWords(a.cnt))
-            }}), $.ajax({url: "http://follow.soa.jd.com/product/queryForReduceProductCount.action?",dataType: "jsonp",success: function(a) {
-                a && a.data > 0 && $("#num-reduction").html(UC.FN_setWords(a.data))
-            }}), $.ajax({url: "http://quan.jd.com/getcouponcount.action",dataType: "jsonp",success: function(a) {
-                a && $("#num-ticket").html(UC.FN_setWords(a.CouponCount))
-            }})
-    }}, MCART = {DATA_Cookie: "cn",DATA_Amount: readCookie("cn") || "0",URL_Serv: "http://cart.jd.com/cart/miniCartServiceNew.action",TPL_Iframe: '<iframe scrolling="no" frameborder="0" marginheight="0" marginwidth="0" id="settleup-iframe"></iframe>',TPL_NoGoods: '<div class="prompt"><div class="nogoods"><b></b>\u8d2d\u7269\u8f66\u4e2d\u8fd8\u6ca1\u6709\u5546\u54c1\uff0c\u8d76\u7d27\u9009\u8d2d\u5427\uff01</div></div>',TPL_List: {wrap: '<div id="settleup-content"><div class="smt"><h4 class="fl">\u6700\u65b0\u52a0\u5165\u7684\u5546\u54c1</h4></div><div class="smc"></div><div class="smb ar">\u5171<b>${Num}</b>\u4ef6\u5546\u54c1\u3000\u5171\u8ba1<strong>\uffe5 ${TotalPromotionPrice.toFixed(2)}</strong><br><a href="http://cart.jd.com/cart/cart.html?r=${+new Date}" title="\u53bb\u8d2d\u7269\u8f66\u7ed3\u7b97" id="btn-payforgoods">\u53bb\u8d2d\u7269\u8f66\u7ed3\u7b97</a></div></div>',sigle: '<ul id="mcart-sigle">{for list in TheSkus}  <li>      <div class="p-img fl"><a href="http://item.jd.com/${list.Id}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(list.Id)}n5/${list.ImgUrl}" width="50" height="50" alt=""></a></div>      <div class="p-name fl"><a href="http://item.jd.com/${list.Id}.html" title="${list.Name}" target="_blank">${list.Name}</a></div>      <div class="p-detail fr ar">          <span class="p-price"><strong>\uffe5${list.PromotionPrice.toFixed(2)}</strong>\xd7${list.Num}</span>          <br>          {if parseInt(list.FanPrice)>0}          <span class="hl-green">\u8fd4\u73b0\uff1a\uffe5<em>${list.FanPrice}</em></span>          <br>          {/if}          {if parseInt(list.Score)>0}          <span class="hl-orange">\u9001\u4eac\u8c46\uff1a<em>${list.Score}</em></span>          <br>          {/if}          <a class="delete" data-id="${list.Id}" data-type="RemoveProduct" href="#delete">\u5220\u9664</a>      </div>      {for jq in list.CouponAD}      <div class="gift-jq">[\u8d60\u5238] \u8d60\u9001${jq.Jing}\u4eac\u5238 ${jq.LimitAd}</a></div>      {/for}  </li>{/for}</ul>',gift: '<ul id="mcart-gift">{for list in TheGifts}  <li>      <div class="p-img fl"><a href="http://item.jd.com/${list.MainSKU.Id}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(list.MainSKU.Id)}n5/${list.MainSKU.ImgUrl}" width="50" height="50" alt=""></a></div>      <div class="p-name fl"><a href="http://item.jd.com/${list.MainSKU.Id}.html" title="${list.MainSKU.Name}" target="_blank">${list.MainSKU.Name}</a></div>      <div class="p-detail fr ar">          <span class="p-price"><strong>\uffe5${list.PromotionPrice.toFixed(2)}</strong>\xd7${list.Num}</span>          <br>          {if parseInt(list.FanPrice)>0}          <span class="hl-green">\u8fd4\u73b0\uff1a\uffe5<em>${list.FanPrice}</em></span>          <br>          {/if}          {if parseInt(list.Score)>0}          <span class="hl-orange">\u9001\u4eac\u8c46\uff1a<em>${list.Score}</em></span>          <br>          {/if}          <a class="delete" data-id="${list.MainSKU.Id}" data-type="RemoveProduct" href="#delete">\u5220\u9664</a>      </div>      {for gift in list.Skus}      <div class="gift"><a href="http://item.jd.com/${gift.Id}.html" target="_blank">[{if gift.Type==2}\u8d60\u54c1{/if}{if gift.Type==1}\u9644\u4ef6{/if}] ${gift.Name}</a></div>      {/for}      {for jq in list.CouponAD}      <div class="gift-jq">[\u8d60\u5238] \u8d60\u9001${jq.Jing}\u5143\u4eac\u5238 ${jq.LimitAd}</a></div>      {/for}  </li>  {/for}</ul>',suit: '{for suit in TheSuit}<ul id="mcart-suit">  <li class="dt">      <div class="fl"><span>[\u5957\u88c5]</span> ${suit.Name}</div>      <div class="fr"><em>\u5c0f\u8ba1\uff1a\uffe5${(suit.PromotionPrice*suit.Num).toFixed(2)}</em></div>      <div class="clr"></div>  </li>  {for list in suit.Skus}  <li>      <div class="p-img fl"><a href="http://item.jd.com/${list.Id}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(list.Id)}n5/${list.ImgUrl}" width="50" height="50" alt=""></a></div>      <div class="p-name fl"><span></span><a href="http://item.jd.com/${list.Id}.html" title="${list.Name}" target="_blank">${list.Name}</a></div>      <div class="p-detail fr ar">          <span class="p-price"><strong>\uffe5${list.PromotionPrice.toFixed(2)}</strong>\xd7${list.Num}</span>          <br>          {if parseInt(list.FanPrice)>0}          <span class="hl-green">\u8fd4\u73b0\uff1a\uffe5<em>${list.FanPrice}</em></span>          <br>          {/if}          {if parseInt(list.Score)>0}          <span class="hl-orange">\u9001\u4eac\u8c46\uff1a<em>${list.Score}</em></span>          <br>          {/if}          <a class="delete" data-id="${list.Id}|${suit.Id}" data-type="RemoveSuit" href="#delete">\u5220\u9664</a>      </div>      {for gift in list.Gifts}      <div class="gift"><a href="http://item.jd.com/${gift.Id}.html" target="_blank">[{if gift.Type==2}\u8d60\u54c1{/if}{if gift.Type==1}\u9644\u4ef6{/if}] ${gift.Name}</a></div>      {/for}      {for jq in list.CouponAD}      <div class="gift-jq">[\u8d60\u5238] \u8d60\u9001${jq.Jing}\u5143\u4eac\u5238 ${jq.LimitAd}</a></div>      {/for}  </li>  {/for}</ul>{/for}',mj: '{for mj in ManJian}<ul id="mcart-mj">  <li class="dt">      <div class="fl"><span class="hl-green">\u6ee1\u51cf</span>{if mj.ManFlag} \u5df2\u8d2d\u6ee1{if mj.ManNum>0}${mj.ManNum}\u4ef6{else}${mj.ManPrice}\u5143{/if}\uff0c\u5df2\u51cf${mj.JianPrice}\u5143{else}\u8d2d\u6ee1{if mj.ManNum>0}${mj.ManNum}\u4ef6{else}${mj.ManPrice}\u5143{/if}\uff0c\u5373\u53ef\u4eab\u53d7\u6ee1\u51cf\u4f18\u60e0{/if}</div>      <div class="fr"><em>\u5c0f\u8ba1\uff1a\uffe5${(mj.PromotionPrice*mj.Num).toFixed(2)}</em></div>      <div class="clr"></div>  </li>  {for list in mj.Skus}  <li>      <div class="p-img fl"><a href="http://item.jd.com/${list.Id}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(list.Id)}n5/${list.ImgUrl}" width="50" height="50" alt=""></a></div>      <div class="p-name fl"><span></span><a href="http://item.jd.com/${list.Id}.html" title="${list.Name}" target="_blank">${list.Name}</a></div>      <div class="p-detail fr ar">          <span class="p-price"><strong>\uffe5${list.PromotionPrice.toFixed(2)}</strong>\xd7${list.Num}</span>          <br>          {if parseInt(list.FanPrice)>0}          <span class="hl-green">\u8fd4\u73b0\uff1a\uffe5<em>${list.FanPrice}</em></span>          <br>          {/if}          {if parseInt(list.Score)>0}          <span class="hl-orange">\u9001\u4eac\u8c46\uff1a<em>${list.Score}</em></span>          <br>          {/if}          <a class="delete" data-id="${list.Id}|${mj.Id}" data-type="RemoveSuit" href="#delete">\u5220\u9664</a>      </div>      {for gift in list.Gifts}      <div class="gift"><a href="http://item.jd.com/${gift.Id}.html" target="_blank">[{if gift.Type==2}\u8d60\u54c1{/if}{if gift.Type==1}\u9644\u4ef6{/if}] ${gift.Name}</a></div>      {/for}      {for jq in list.CouponAD}      <div class="gift-jq">[\u8d60\u5238] \u8d60\u9001${jq.Jing}\u5143\u4eac\u5238 ${jq.LimitAd}</a></div>      {/for}  </li>  {/for}</ul>{/for}',mz: '{for mz in ManZeng}<ul id="mcart-mz">  <li class="dt">      <div class="fl"><span class="hl-orange">\u6ee1\u8d60</span>          {if mz.ManFlag}              \u5df2\u8d2d\u6ee1${mz.ManPrice}\u5143\uff0c\u60a8{if mz.ManGifts.length>0}\u5df2{else}\u53ef{/if}\u9886\u8d60\u54c1          {else}              \u8d2d\u6ee1${mz.ManPrice}\u5143\uff0c\u5373\u53ef\u9886\u53d6\u8d60\u54c1          {/if}      </div>      <div class="fr"><em>\u5c0f\u8ba1\uff1a\uffe5${(mz.PromotionPrice*mz.Num).toFixed(2)}</em></div>      <div class="clr"></div>  </li>  {for gift in mz.ManGifts}<li class="dt-mz"><a href="${gift.Id}" target="_blank">[\u8d60\u54c1]${gift.Name}</a>\xd7${gift.Num}</li>{/for}  {for list in mz.Skus}  <li>      <div class="p-img fl"><a href="http://item.jd.com/${list.Id}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(list.Id)}n5/${list.ImgUrl}" width="50" height="50" alt=""></a></div>      <div class="p-name fl"><span></span><a href="http://item.jd.com/${list.Id}.html" title="${list.Name}" target="_blank">${list.Name}</a></div>      <div class="p-detail fr ar">          <span class="p-price"><strong>\uffe5${list.PromotionPrice.toFixed(2)}</strong>\xd7${list.Num}</span>          <br>          {if parseInt(list.FanPrice)>0}          <span class="hl-green">\u8fd4\u73b0\uff1a\uffe5<em>${list.FanPrice}</em></span>          <br>          {/if}          {if parseInt(list.Score)>0}          <span class="hl-orange">\u9001\u4eac\u8c46\uff1a<em>${list.Score}</em></span>          <br>          {/if}          <a class="delete" data-id="${list.Id}|${mz.Id}" data-type="RemoveSuit" href="#delete">\u5220\u9664</a>      </div>      {for gift in list.Gifts}      <div class="gift"><a href="http://item.jd.com/${gift.Id}.html" target="_blank">[{if gift.Type==2}\u8d60\u54c1{/if}{if gift.Type==1}\u9644\u4ef6{/if}] ${gift.Name}</a></div>      {/for}      {for jq in list.CouponAD}      <div class="gift-jq">[\u8d60\u5238] \u8d60\u9001${jq.Jing}\u5143\u4eac\u5238 ${jq.LimitAd}</a></div>      {/for}  </li>  {/for}</ul>{/for}'},FN_BindEvents: function() {
-        var a = this;
-        $("#settleup-content .delete").bind("click", function() {
-            var b = $(this).attr("data-id").split("|"), c = $(this).attr("data-type"), d = {method: c,cartId: b[0]};
-            b && (b.length > 1 && b[1] && (d.targetId = b[1]), $.ajax({url: MCART.URL_Serv,data: d,dataType: "jsonp",success: function(b) {
-                    b.Result && a.FN_Refresh()
-                }}))
-        })
-    },FN_Refresh: function() {
-        var a = document.getElementById("settleup") ? $("#settleup dl") : $("#settleup-2013 dl"), b = a.find("dd").eq(0), c = function(a) {
-            var c = a.Cart, d = c.TheSkus.length + c.TheSuit.length + c.TheGifts.length + c.ManJian.length + c.ManZeng.length, e = MCART.TPL_List.sigle.process(a.Cart), f = MCART.TPL_List.gift.process(a.Cart), g = MCART.TPL_List.suit.process(a.Cart), h = MCART.TPL_List.mz.process(a.Cart), i = MCART.TPL_List.mj.process(a.Cart);
-            if (d > 0 ? (b.html(MCART.TPL_List.wrap.process(a.Cart)), b.find("#settleup-content .smc").html(e + f + g + i + h), $("#settleup-url").attr("href", "http://cart.jd.com/cart/cart.html?r=" + +new Date)) : b.html(MCART.TPL_NoGoods), $.browser.msie && 6 == $.browser.version) {
-                var j = $("#settleup-content");
-                j.before(MCART.TPL_Iframe);
-                var k = $("#settleup-iframe");
-                k.height(j.height())
-            }
-            MCART.FN_BindEvents()
-        };
-        $.ajax({url: MCART.URL_Serv,data: {method: "GetCart"},dataType: "jsonp",success: function(a) {
-                c(a)
-            }}), MCART.DATA_Amount = readCookie(MCART.DATA_Cookie), null != MCART.DATA_Amount && $("#shopping-amount").html(MCART.DATA_Amount).parent().show()
-    }}, NotifyPop = {_saleNotify: "http://skunotify." + pageConfig.FN_getDomain() + "/pricenotify.html?",_stockNotify: "http://skunotify." + pageConfig.FN_getDomain() + "/storenotify.html?",init: function(a) {
-        var b, c = this, d = this.serializeUrl(location.href), e = /from=weibo/.test(location.href) ? location.search.replace(/\?/, "") : "";
-        /from=weibo/.test(location.href) && (b = d.param.type, this.setThickBox(b, e)), a.livequery("click", function() {
-            var a = ($(this).attr("id"), $(this).attr("data-type") || 2);
-            return c.sku = $(this).attr("data-sku"), c.checkLogin(function(b) {
-                b.IsAuthenticated ? (c._userPin = b.Name, c.setThickBox(a, e)) : (jdModelCallCenter.settings.fn = function() {
-                    c.checkLogin(function(b) {
-                        b.IsAuthenticated && (c._userPin = b.Name, c.setThickBox(a, e))
-                    })
-                }, jdModelCallCenter.login())
-            }), !1
-        }).attr("href", "#none").removeAttr("target")
-    },serializeUrl: function(a) {
-        var b, c, d, e, f = a.indexOf("?"), g = a.substr(0, f), h = a.substr(f + 1), i = h.split("&"), j = i.length, k = {};
-        for (b = 0; j > b; b++)
-            c = i[b].split("="), d = c[0], e = c[1], k[d] = e;
-        return {url: g,param: k}
-    },checkLogin: function(a) {
-        "function" == typeof a && $.getJSON("http://passport." + pageConfig.FN_getDomain() + "/loginservice.aspx?method=Login&callback=?", function(b) {
-            b.Identity && a(b.Identity)
-        })
-    },setThickBox: function(a, b) {
-        var c, d, e, f = {skuId: this.sku,pin: this._userPin,webSite: 1,origin: 1,source: 1}, g = this.serializeUrl(location.href);
-        /blogPin/.test(location.href) && (f.blogPin = g.param.blogPin), 1 == a && (c = "\u964d\u4ef7\u901a\u77e5", d = this._saleNotify, e = 250), 2 == a && (c = "\u5230\u8d27\u901a\u77e5", d = this._stockNotify, e = 210, f.storeAddressId = readCookie("ipLoc-djd") || "0-0-0"), d += b ? b : $.param(f), $.jdThickBox({type: "iframe",source: decodeURIComponent(d) + "&nocache=" + +new Date,width: 500,height: e,title: c,_box: "notify_box",_con: "notify_con",_title: "notify_title"})
-    }};
+    }}), $.ajax({url: "http://minijd.360buy.com/getHomeCount",dataType: "jsonp",success: function(a) {
+        a && 0 == a.error && $("#num-unfinishedorder").html(UC.FN_setWords(a.orderCount))
+    }}), $.ajax({url: "http://comm.360buy.com/index.php?mod=Consultation&action=havingReplyCount",dataType: "jsonp",success: function(a) {
+        a && $("#num-consultation").html(UC.FN_setWords(a.cnt))
+    }}), $.ajax({url: "http://follow.soa.jd.com/product/queryForReduceProductCount.action?",dataType: "jsonp",success: function(a) {
+        a && a.data > 0 && $("#num-reduction").html(UC.FN_setWords(a.data))
+    }}), $.ajax({url: "http://quan.jd.com/getcouponcount.action",dataType: "jsonp",success: function(a) {
+        a && $("#num-ticket").html(UC.FN_setWords(a.CouponCount))
+    }})
+}}, MCART = {DATA_Cookie: "cn",DATA_Amount: readCookie("cn") || "0",URL_Serv: "http://cart.jd.com/cart/miniCartServiceNew.action",TPL_Iframe: '<iframe scrolling="no" frameborder="0" marginheight="0" marginwidth="0" id="settleup-iframe"></iframe>',TPL_NoGoods: '<div class="prompt"><div class="nogoods"><b></b>\u8d2d\u7269\u8f66\u4e2d\u8fd8\u6ca1\u6709\u5546\u54c1\uff0c\u8d76\u7d27\u9009\u8d2d\u5427\uff01</div></div>',TPL_List: {wrap: '<div id="settleup-content"><div class="smt"><h4 class="fl">\u6700\u65b0\u52a0\u5165\u7684\u5546\u54c1</h4></div><div class="smc"></div><div class="smb ar">\u5171<b>${Num}</b>\u4ef6\u5546\u54c1\u3000\u5171\u8ba1<strong>\uffe5 ${TotalPromotionPrice.toFixed(2)}</strong><br><a href="http://cart.jd.com/cart/cart.html?r=${+new Date}" title="\u53bb\u8d2d\u7269\u8f66\u7ed3\u7b97" id="btn-payforgoods">\u53bb\u8d2d\u7269\u8f66\u7ed3\u7b97</a></div></div>',sigle: '<ul id="mcart-sigle">{for list in TheSkus}  <li>      <div class="p-img fl"><a href="http://item.jd.com/${list.Id}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(list.Id)}n5/${list.ImgUrl}" width="50" height="50" alt=""></a></div>      <div class="p-name fl"><a href="http://item.jd.com/${list.Id}.html" title="${list.Name}" target="_blank">${list.Name}</a></div>      <div class="p-detail fr ar">          <span class="p-price"><strong>\uffe5${list.PromotionPrice.toFixed(2)}</strong>\xd7${list.Num}</span>          <br>          {if parseInt(list.FanPrice)>0}          <span class="hl-green">\u8fd4\u73b0\uff1a\uffe5<em>${list.FanPrice}</em></span>          <br>          {/if}          {if parseInt(list.Score)>0}          <span class="hl-orange">\u9001\u4eac\u8c46\uff1a<em>${list.Score}</em></span>          <br>          {/if}          <a class="delete" data-id="${list.Id}" data-type="RemoveProduct" href="#delete">\u5220\u9664</a>      </div>      {for jq in list.CouponAD}      <div class="gift-jq">[\u8d60\u5238] \u8d60\u9001${jq.Jing}\u4eac\u5238 ${jq.LimitAd}</a></div>      {/for}  </li>{/for}</ul>',gift: '<ul id="mcart-gift">{for list in TheGifts}  <li>      <div class="p-img fl"><a href="http://item.jd.com/${list.MainSKU.Id}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(list.MainSKU.Id)}n5/${list.MainSKU.ImgUrl}" width="50" height="50" alt=""></a></div>      <div class="p-name fl"><a href="http://item.jd.com/${list.MainSKU.Id}.html" title="${list.MainSKU.Name}" target="_blank">${list.MainSKU.Name}</a></div>      <div class="p-detail fr ar">          <span class="p-price"><strong>\uffe5${list.PromotionPrice.toFixed(2)}</strong>\xd7${list.Num}</span>          <br>          {if parseInt(list.FanPrice)>0}          <span class="hl-green">\u8fd4\u73b0\uff1a\uffe5<em>${list.FanPrice}</em></span>          <br>          {/if}          {if parseInt(list.Score)>0}          <span class="hl-orange">\u9001\u4eac\u8c46\uff1a<em>${list.Score}</em></span>          <br>          {/if}          <a class="delete" data-id="${list.MainSKU.Id}" data-type="RemoveProduct" href="#delete">\u5220\u9664</a>      </div>      {for gift in list.Skus}      <div class="gift"><a href="http://item.jd.com/${gift.Id}.html" target="_blank">[{if gift.Type==2}\u8d60\u54c1{/if}{if gift.Type==1}\u9644\u4ef6{/if}] ${gift.Name}</a></div>      {/for}      {for jq in list.CouponAD}      <div class="gift-jq">[\u8d60\u5238] \u8d60\u9001${jq.Jing}\u5143\u4eac\u5238 ${jq.LimitAd}</a></div>      {/for}  </li>  {/for}</ul>',suit: '{for suit in TheSuit}<ul id="mcart-suit">  <li class="dt">      <div class="fl"><span>[\u5957\u88c5]</span> ${suit.Name}</div>      <div class="fr"><em>\u5c0f\u8ba1\uff1a\uffe5${(suit.PromotionPrice*suit.Num).toFixed(2)}</em></div>      <div class="clr"></div>  </li>  {for list in suit.Skus}  <li>      <div class="p-img fl"><a href="http://item.jd.com/${list.Id}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(list.Id)}n5/${list.ImgUrl}" width="50" height="50" alt=""></a></div>      <div class="p-name fl"><span></span><a href="http://item.jd.com/${list.Id}.html" title="${list.Name}" target="_blank">${list.Name}</a></div>      <div class="p-detail fr ar">          <span class="p-price"><strong>\uffe5${list.PromotionPrice.toFixed(2)}</strong>\xd7${list.Num}</span>          <br>          {if parseInt(list.FanPrice)>0}          <span class="hl-green">\u8fd4\u73b0\uff1a\uffe5<em>${list.FanPrice}</em></span>          <br>          {/if}          {if parseInt(list.Score)>0}          <span class="hl-orange">\u9001\u4eac\u8c46\uff1a<em>${list.Score}</em></span>          <br>          {/if}          <a class="delete" data-id="${list.Id}|${suit.Id}" data-type="RemoveSuit" href="#delete">\u5220\u9664</a>      </div>      {for gift in list.Gifts}      <div class="gift"><a href="http://item.jd.com/${gift.Id}.html" target="_blank">[{if gift.Type==2}\u8d60\u54c1{/if}{if gift.Type==1}\u9644\u4ef6{/if}] ${gift.Name}</a></div>      {/for}      {for jq in list.CouponAD}      <div class="gift-jq">[\u8d60\u5238] \u8d60\u9001${jq.Jing}\u5143\u4eac\u5238 ${jq.LimitAd}</a></div>      {/for}  </li>  {/for}</ul>{/for}',mj: '{for mj in ManJian}<ul id="mcart-mj">  <li class="dt">      <div class="fl"><span class="hl-green">\u6ee1\u51cf</span>{if mj.ManFlag} \u5df2\u8d2d\u6ee1{if mj.ManNum>0}${mj.ManNum}\u4ef6{else}${mj.ManPrice}\u5143{/if}\uff0c\u5df2\u51cf${mj.JianPrice}\u5143{else}\u8d2d\u6ee1{if mj.ManNum>0}${mj.ManNum}\u4ef6{else}${mj.ManPrice}\u5143{/if}\uff0c\u5373\u53ef\u4eab\u53d7\u6ee1\u51cf\u4f18\u60e0{/if}</div>      <div class="fr"><em>\u5c0f\u8ba1\uff1a\uffe5${(mj.PromotionPrice*mj.Num).toFixed(2)}</em></div>      <div class="clr"></div>  </li>  {for list in mj.Skus}  <li>      <div class="p-img fl"><a href="http://item.jd.com/${list.Id}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(list.Id)}n5/${list.ImgUrl}" width="50" height="50" alt=""></a></div>      <div class="p-name fl"><span></span><a href="http://item.jd.com/${list.Id}.html" title="${list.Name}" target="_blank">${list.Name}</a></div>      <div class="p-detail fr ar">          <span class="p-price"><strong>\uffe5${list.PromotionPrice.toFixed(2)}</strong>\xd7${list.Num}</span>          <br>          {if parseInt(list.FanPrice)>0}          <span class="hl-green">\u8fd4\u73b0\uff1a\uffe5<em>${list.FanPrice}</em></span>          <br>          {/if}          {if parseInt(list.Score)>0}          <span class="hl-orange">\u9001\u4eac\u8c46\uff1a<em>${list.Score}</em></span>          <br>          {/if}          <a class="delete" data-id="${list.Id}|${mj.Id}" data-type="RemoveSuit" href="#delete">\u5220\u9664</a>      </div>      {for gift in list.Gifts}      <div class="gift"><a href="http://item.jd.com/${gift.Id}.html" target="_blank">[{if gift.Type==2}\u8d60\u54c1{/if}{if gift.Type==1}\u9644\u4ef6{/if}] ${gift.Name}</a></div>      {/for}      {for jq in list.CouponAD}      <div class="gift-jq">[\u8d60\u5238] \u8d60\u9001${jq.Jing}\u5143\u4eac\u5238 ${jq.LimitAd}</a></div>      {/for}  </li>  {/for}</ul>{/for}',mz: '{for mz in ManZeng}<ul id="mcart-mz">  <li class="dt">      <div class="fl"><span class="hl-orange">\u6ee1\u8d60</span>          {if mz.ManFlag}              \u5df2\u8d2d\u6ee1${mz.ManPrice}\u5143\uff0c\u60a8{if mz.ManGifts.length>0}\u5df2{else}\u53ef{/if}\u9886\u8d60\u54c1          {else}              \u8d2d\u6ee1${mz.ManPrice}\u5143\uff0c\u5373\u53ef\u9886\u53d6\u8d60\u54c1          {/if}      </div>      <div class="fr"><em>\u5c0f\u8ba1\uff1a\uffe5${(mz.PromotionPrice*mz.Num).toFixed(2)}</em></div>      <div class="clr"></div>  </li>  {for gift in mz.ManGifts}<li class="dt-mz"><a href="${gift.Id}" target="_blank">[\u8d60\u54c1]${gift.Name}</a>\xd7${gift.Num}</li>{/for}  {for list in mz.Skus}  <li>      <div class="p-img fl"><a href="http://item.jd.com/${list.Id}.html" target="_blank"><img src="${pageConfig.FN_GetImageDomain(list.Id)}n5/${list.ImgUrl}" width="50" height="50" alt=""></a></div>      <div class="p-name fl"><span></span><a href="http://item.jd.com/${list.Id}.html" title="${list.Name}" target="_blank">${list.Name}</a></div>      <div class="p-detail fr ar">          <span class="p-price"><strong>\uffe5${list.PromotionPrice.toFixed(2)}</strong>\xd7${list.Num}</span>          <br>          {if parseInt(list.FanPrice)>0}          <span class="hl-green">\u8fd4\u73b0\uff1a\uffe5<em>${list.FanPrice}</em></span>          <br>          {/if}          {if parseInt(list.Score)>0}          <span class="hl-orange">\u9001\u4eac\u8c46\uff1a<em>${list.Score}</em></span>          <br>          {/if}          <a class="delete" data-id="${list.Id}|${mz.Id}" data-type="RemoveSuit" href="#delete">\u5220\u9664</a>      </div>      {for gift in list.Gifts}      <div class="gift"><a href="http://item.jd.com/${gift.Id}.html" target="_blank">[{if gift.Type==2}\u8d60\u54c1{/if}{if gift.Type==1}\u9644\u4ef6{/if}] ${gift.Name}</a></div>      {/for}      {for jq in list.CouponAD}      <div class="gift-jq">[\u8d60\u5238] \u8d60\u9001${jq.Jing}\u5143\u4eac\u5238 ${jq.LimitAd}</a></div>      {/for}  </li>  {/for}</ul>{/for}'},FN_BindEvents: function() {
+    var a = this;
+    $("#settleup-content .delete").bind("click", function() {
+        var b = $(this).attr("data-id").split("|"), c = $(this).attr("data-type"), d = {method: c,cartId: b[0]};
+        b && (b.length > 1 && b[1] && (d.targetId = b[1]), $.ajax({url: MCART.URL_Serv,data: d,dataType: "jsonp",success: function(b) {
+            b.Result && a.FN_Refresh()
+        }}))
+    })
+},FN_Refresh: function() {
+    var a = document.getElementById("settleup") ? $("#settleup dl") : $("#settleup-2013 dl"), b = a.find("dd").eq(0), c = function(a) {
+        var c = a.Cart, d = c.TheSkus.length + c.TheSuit.length + c.TheGifts.length + c.ManJian.length + c.ManZeng.length, e = MCART.TPL_List.sigle.process(a.Cart), f = MCART.TPL_List.gift.process(a.Cart), g = MCART.TPL_List.suit.process(a.Cart), h = MCART.TPL_List.mz.process(a.Cart), i = MCART.TPL_List.mj.process(a.Cart);
+        if (d > 0 ? (b.html(MCART.TPL_List.wrap.process(a.Cart)), b.find("#settleup-content .smc").html(e + f + g + i + h), $("#settleup-url").attr("href", "http://cart.jd.com/cart/cart.html?r=" + +new Date)) : b.html(MCART.TPL_NoGoods), $.browser.msie && 6 == $.browser.version) {
+            var j = $("#settleup-content");
+            j.before(MCART.TPL_Iframe);
+            var k = $("#settleup-iframe");
+            k.height(j.height())
+        }
+        MCART.FN_BindEvents()
+    };
+    $.ajax({url: MCART.URL_Serv,data: {method: "GetCart"},dataType: "jsonp",success: function(a) {
+        c(a)
+    }}), MCART.DATA_Amount = readCookie(MCART.DATA_Cookie), null != MCART.DATA_Amount && $("#shopping-amount").html(MCART.DATA_Amount).parent().show()
+}}, NotifyPop = {_saleNotify: "http://skunotify." + pageConfig.FN_getDomain() + "/pricenotify.html?",_stockNotify: "http://skunotify." + pageConfig.FN_getDomain() + "/storenotify.html?",init: function(a) {
+    var b, c = this, d = this.serializeUrl(location.href), e = /from=weibo/.test(location.href) ? location.search.replace(/\?/, "") : "";
+    /from=weibo/.test(location.href) && (b = d.param.type, this.setThickBox(b, e)), a.livequery("click", function() {
+        var a = ($(this).attr("id"), $(this).attr("data-type") || 2);
+        return c.sku = $(this).attr("data-sku"), c.checkLogin(function(b) {
+            b.IsAuthenticated ? (c._userPin = b.Name, c.setThickBox(a, e)) : (jdModelCallCenter.settings.fn = function() {
+                c.checkLogin(function(b) {
+                    b.IsAuthenticated && (c._userPin = b.Name, c.setThickBox(a, e))
+                })
+            }, jdModelCallCenter.login())
+        }), !1
+    }).attr("href", "#none").removeAttr("target")
+},serializeUrl: function(a) {
+    var b, c, d, e, f = a.indexOf("?"), g = a.substr(0, f), h = a.substr(f + 1), i = h.split("&"), j = i.length, k = {};
+    for (b = 0; j > b; b++)
+        c = i[b].split("="), d = c[0], e = c[1], k[d] = e;
+    return {url: g,param: k}
+},checkLogin: function(a) {
+    "function" == typeof a && $.getJSON("http://passport." + pageConfig.FN_getDomain() + "/loginservice.aspx?method=Login&callback=?", function(b) {
+        b.Identity && a(b.Identity)
+    })
+},setThickBox: function(a, b) {
+    var c, d, e, f = {skuId: this.sku,pin: this._userPin,webSite: 1,origin: 1,source: 1}, g = this.serializeUrl(location.href);
+    /blogPin/.test(location.href) && (f.blogPin = g.param.blogPin), 1 == a && (c = "\u964d\u4ef7\u901a\u77e5", d = this._saleNotify, e = 250), 2 == a && (c = "\u5230\u8d27\u901a\u77e5", d = this._stockNotify, e = 210, f.storeAddressId = readCookie("ipLoc-djd") || "0-0-0"), d += b ? b : $.param(f), $.jdThickBox({type: "iframe",source: decodeURIComponent(d) + "&nocache=" + +new Date,width: 500,height: e,title: c,_box: "notify_box",_con: "notify_con",_title: "notify_title"})
+}};
 !function() {
     pageConfig.FN_ImgError(document), $("img[data-lazyload]").Jlazyload({type: "image",placeholderClass: "err-product"}), category.FN_Init(), document.getElementById("shortcut") ? $("#shortcut .menu").Jdropdown({delay: 50}) : ($("#biz-service").Jdropdown({delay: 50}, function() {
         $.ajax({url: "http://www.jd.com/hotwords.aspx?position=new-index-002",dataType: "script",scriptCharset: "gb2312",cache: !0})
     }), $("#site-nav").Jdropdown({delay: 50}, function() {
         $.ajax({url: "http://www.jd.com/hotwords.aspx?position=new-index-003",dataType: "script",scriptCharset: "gb2312",cache: !0})
     })), document.getElementById("navitems") ? $("#navitems li").Jdropdown() : $("#navitems-2013 li").Jdropdown()
-    		
+
 //    		$.ajax({url: ("https:" == document.location.protocol ? "https://" : "http://") + "passport." + pageConfig.FN_getDomain() + "/new/helloService.ashx?m=ls",
 //    			dataType: "jsonp",scriptCharset: "gb2312",success: function(a) {
 //            a && a.info && $("#loginbar").html(a.info), a && a.sso && $.each(a.sso, function() {
 //                $.getJSON(this);
-//                
+//
 //            })
-//        }}), 
-        
+//        }}),
+
 //        document.getElementById("settleup") ? (null != MCART.DATA_Amount && ($("#settleup s").eq(0).addClass("shopping"), $("#shopping-amount").html(MCART.DATA_Amount)), $("#settleup dl").Jdropdown({delay: 200}, function() {
 //        //MCART.FN_Refresh(), $("#settleup-url").attr("href", "http://cart.jd.com/cart/cart.html?r=" + +new Date)
 //    }
-//        
+//
 //        )) : (null != MCART.DATA_Amount && $("#shopping-amount").html(MCART.DATA_Amount), $("#settleup-2013 dl").Jdropdown({delay: 200}, function() {
 //        MCART.FN_Refresh(), $("#settleup-url").attr("href", "http://cart.jd.com/cart/cart.html?r=" + +new Date)
 //    }));
     var a = document.getElementById("my360buy") ? $("#my360buy") : $("#my360buy-2013");
     a.find("dl").Jdropdown({delay: 100}, function(a) {
         a.attr("load") || $.login({automatic: !1,complete: function(b) {
-                if (b) {
-                    var c = a.find("dd").eq(0), d = "", e = readCookie(UC.DATA_Cookie);
-                    b.IsAuthenticated ? (d += UC.TPL_Regist.process(b), d += UC.TPL_OList.placeholder, d += UC.TPL_UList) : (d += UC.TPL_UnRegist, d += UC.TPL_UList), e && (d += UC.TPL_VList.placeholder), c.html(d), a.attr("load", "1"), setTimeout(function() {
-                        a.removeAttr("load")
-                    }, 6e4), /\[\{/.test(e) ? UC.FN_InitVList(e) : UC.FN_InitNewVList(e), UC.FN_InitOList()
-                }
-            }})
+            if (b) {
+                var c = a.find("dd").eq(0), d = "", e = readCookie(UC.DATA_Cookie);
+                b.IsAuthenticated ? (d += UC.TPL_Regist.process(b), d += UC.TPL_OList.placeholder, d += UC.TPL_UList) : (d += UC.TPL_UnRegist, d += UC.TPL_UList), e && (d += UC.TPL_VList.placeholder), c.html(d), a.attr("load", "1"), setTimeout(function() {
+                    a.removeAttr("load")
+                }, 6e4), /\[\{/.test(e) ? UC.FN_InitVList(e) : UC.FN_InitNewVList(e), UC.FN_InitOList()
+            }
+        }})
     }), document.onkeyup = function(a) {
         var b = document.activeElement.tagName.toLowerCase();
         if ("input" != b && "textarea" != b) {

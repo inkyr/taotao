@@ -40,7 +40,7 @@
         <property name="configLocation" value="classpath:SqlMapConfig.xml" />
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.taotao.mapper" />
+        <property name="basePackage" value="com.taotao.mapper, com.taotao.order.dao" />
     </bean>
 
     <!--事务管理-->
@@ -76,6 +76,6 @@
     <dubbo:protocol name="dubbo" port="20884" />
     <!-- 声明需要暴露的服务接口 -->
     <!--<dubbo:service timeout="40000000" interface="com.taotao.order.service" ref="itemServiceImpl" />-->
-
+    <dubbo:service timeout="40000000" interface="com.taotao.order.service.OrderService" ref="orderServiceImpl" />
 
 </beans>

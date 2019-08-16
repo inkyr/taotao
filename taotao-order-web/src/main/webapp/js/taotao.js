@@ -10,7 +10,6 @@ var TT = TAOTAO = {
             type : "GET",
             success : function(data){
                 if(data.status == 200){
-                    debugger;
                     var userName = data.data.userName;
                     var html = userName + "，欢迎来到淘淘！<a href='http://localhost:8088/user/logout/"+_ticket+"' class='link-logout'>[退出]</a>";
                     $("#loginbar").html(html);
