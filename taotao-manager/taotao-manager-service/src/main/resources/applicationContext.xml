@@ -111,6 +111,7 @@
     <dubbo:service timeout="40000000" interface="com.taotao.service.PictureService" ref="pictureServiceImpl" />
     <dubbo:service timeout="40000000" interface="com.taotao.service.OssPictureService" ref="ossPictureServiceImpl" />
     <dubbo:service timeout="40000000" interface="com.taotao.service.ItemParamService" ref="itemParamServiceImpl" />
+    <dubbo:service timeout="40000000" interface="com.taotao.service.DataViewService" ref="dataViewServiceImpl" />
 
 
 

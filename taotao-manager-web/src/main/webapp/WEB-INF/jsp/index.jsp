@@ -11,6 +11,7 @@
 <script type="text/javascript" src="js/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="js/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="../js/echarts.js"></script>
 <style type="text/css">
 	.content {
 		padding: 10px 10px 10px 10px;
@@ -39,6 +40,12 @@
 				<span>初始化搜索引擎</span>
 				<ul>
 					<li data-options="attributes:{'url':'import-solr'}">导入内容索引</li>
+				</ul>
+			</li>
+			<li>
+				<span>数据可视化</span>
+				<ul>
+					<li data-options="attributes:{'url':'showDataView'}">查看各月销售统计图</li>
 				</ul>
 			</li>
          </ul>
