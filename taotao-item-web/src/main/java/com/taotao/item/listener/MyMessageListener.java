@@ -35,34 +35,29 @@ public class MyMessageListener implements MessageListener {
 
     @Override
     public void onMessage(Message message) {
-        TextMessage textMessage = (TextMessage) message;
         try {
+            TextMessage textMessage = (TextMessage) message;
             String text = textMessage.getText();
-            TbItem tbItem = itemService.getItemById(Long.valueOf(text));
-            TbItemDesc tbItemDesc = itemService.getItemDescById(Long.valueOf(text));
-            String itemParamByItemId = itemParamService.getItemParamByItemId(Long.valueOf(text));
-            Template template = freeMarkerConfigurer.getConfiguration().getTemplate("item.ftl");
-            Map map = new HashMap();
-            map.put("item", new Item(tbItem));
-            map.put("itemDesc", tbItemDesc);
-            map.put("itemParam", itemParamByItemId);
-            bufferedWriter = new BufferedWriter(new FileWriter("E:\\" + tbItem.getId() + ".html"));
-            template.process(map, bufferedWriter);
-
+            if (text.split(text)[0].equals("add")) {
+                TbItem tbItem = itemService.getItemById(Long.valueOf(text));
+                TbItemDesc tbItemDesc = itemService.getItemDescById(Long.valueOf(text));
+                String itemParamByItemId = itemParamService.getItemParamByItemId(Long.valueOf(text));
+                Template template = freeMarkerConfigurer.getConfiguration().getTemplate("item.ftl");
+                Map map = new HashMap();
+                map.put("item", new Item(tbItem));
+                map.put("itemDesc", tbItemDesc);
+                map.put("itemParam", itemParamByItemId);
+                bufferedWriter = new BufferedWriter(new FileWriter("E:\\" + tbItem.getId() + ".html"));
+                template.process(map, bufferedWriter);
+            }
         } catch (JMSException e) {
-            e.printStackTrace();
-        } catch (MalformedTemplateNameException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        } catch (TemplateNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (TemplateException e) {
             e.printStackTrace();
         } finally {
-            if (bufferedWriter != null) {
+            if(bufferedWriter == null){
                 try {
                     bufferedWriter.close();
                 } catch (IOException e) {

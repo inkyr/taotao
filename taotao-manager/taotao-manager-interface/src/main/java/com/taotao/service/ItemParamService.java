@@ -2,6 +2,7 @@ package com.taotao.service;
 
 import com.taotao.common.pojo.EasyUIResult;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemParam;
 
 public interface ItemParamService {
@@ -15,4 +16,8 @@ public interface ItemParamService {
     TaotaoResult deleteParam(Long[] ids);
 
     String getItemParamByItemId(Long itemId);
+
+    TaotaoResult findItemParamByItemId(Long itemId);
+
+    //TaotaoResult updateParams(Long itemParamId, String itemParams);
 }

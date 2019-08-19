@@ -32,4 +32,7 @@ public interface ItemMapper {
     @Select("SELECT * from tbitemdesc WHERE itemId = #{itemId}")
     TbItemDesc getItemDescById(Long itemId);
 
+    @Update("UPDATE tbitem SET title=#{title}, sellPoint=#{sellPoint}, price=#{price}, num=#{num}, barcode=#{barcode}, image=#{image}, cid=#{cid}, status=1, updated=#{updated} WHERE id = #{id}")
+    int updateItem(TbItem tbItem);
+
 }

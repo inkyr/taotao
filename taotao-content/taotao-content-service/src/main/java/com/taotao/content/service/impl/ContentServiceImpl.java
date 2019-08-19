@@ -33,7 +33,7 @@ public class ContentServiceImpl implements ContentService {
         /**
          * 判断有无缓存
          */
-        String json = JedisUtil.get(CONTENT_KEY);
+        String json = JedisUtil.get(contentCategoryId + ":" + CONTENT_KEY);
         if(StringUtils.isNotBlank(json)){
             EasyUIResult result = JsonUtils.jsonToPojo(json, EasyUIResult.class);
             System.out.println("缓存中取数据");
@@ -47,7 +47,7 @@ public class ContentServiceImpl implements ContentService {
         /**
          * 数据存入redis缓存
          */
-        JedisUtil.set(CONTENT_KEY, JsonUtils.objectToJson(result));
+        JedisUtil.set(contentCategoryId + ":" + CONTENT_KEY, JsonUtils.objectToJson(result));
         System.out.println("缓存中存数据");
         return result;
     }
@@ -64,7 +64,7 @@ public class ContentServiceImpl implements ContentService {
     @Override
     public List<TbContent> getContentAll(Long contentCategoryId) {
 
-        String json = JedisUtil.get(ITEM_KEY);
+        String json = JedisUtil.get(contentCategoryId + ":" + ITEM_KEY);
         if(StringUtils.isNotBlank(json)){
             List<TbContent> contents = JsonUtils.jsonToList(json, TbContent.class);
             System.out.println("缓存中取数据");
@@ -74,7 +74,7 @@ public class ContentServiceImpl implements ContentService {
         /**
          * 数据存入redis缓存
          */
-        JedisUtil.set(ITEM_KEY, JsonUtils.objectToJson(contents));
+        JedisUtil.set(contentCategoryId + ":" + ITEM_KEY, JsonUtils.objectToJson(contents));
         System.out.println("缓存中存数据");
         return contents;
     }

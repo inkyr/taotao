@@ -5,13 +5,12 @@ import com.github.pagehelper.PageInfo;
 import com.taotao.common.pojo.EasyUIResult;
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.IDUtils;
+import com.taotao.common.utils.JedisUtil;
+import com.taotao.mapper.ContentMapper;
 import com.taotao.mapper.ItemDescMapper;
 import com.taotao.mapper.ItemMapper;
 import com.taotao.mapper.ItemParamItemMapper;
-import com.taotao.pojo.TbItem;
-import com.taotao.pojo.TbItemDesc;
-import com.taotao.pojo.TbItemParam;
-import com.taotao.pojo.TbItemParamItem;
+import com.taotao.pojo.*;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
@@ -40,6 +39,9 @@ public class ItemServiceImpl implements ItemService {
     @Autowired
     private Destination topicDestination;
 
+    @Autowired
+    private ContentMapper contentMapper;
+
     @Override
     public TbItem findItemById(Long itemId) {
         return itemMapper.findItemById(itemId);
@@ -60,6 +62,17 @@ public class ItemServiceImpl implements ItemService {
     public TaotaoResult delItems(Long[] ids) {
         int i = itemMapper.delItems(ids);
         if (i != 0) {
+            jmsTemplate.send(topicDestination, new MessageCreator() {
+                @Override
+                public Message createMessage(Session session) throws JMSException {
+                    String str = "del";
+                    for (Long id : ids) {
+                        str += ("@" + id);
+                    }
+                    TextMessage textMessage = session.createTextMessage(str);
+                    return textMessage;
+                }
+            });
             return TaotaoResult.ok();
         }
         return null;
@@ -111,7 +124,7 @@ public class ItemServiceImpl implements ItemService {
             jmsTemplate.send(topicDestination, new MessageCreator() {
                 @Override
                 public Message createMessage(Session session) throws JMSException {
-                    TextMessage textMessage = session.createTextMessage(itemId + "");
+                    TextMessage textMessage = session.createTextMessage("add@" + itemId);
                     return textMessage;
                 }
             });
@@ -139,5 +152,45 @@ public class ItemServiceImpl implements ItemService {
         return itemMapper.getItemDescById(itemId);
     }
 
+    @Override
+    public TaotaoResult updateItem(TbItem tbItem, String itemParams, String desc, Long itemParamId) {
+        int i, j, k;
+        Date date = new Date();
+        tbItem.setUpdated(date);
+        i = itemMapper.updateItem(tbItem);
+        j = itemDescMapper.updateDesc(desc, tbItem.getId());
+        if (itemParamId != null) {
+            TbItemParamItem tbItemParamItem = new TbItemParamItem();
+            tbItemParamItem.setId(itemParamId);
+            tbItemParamItem.setUpdated(date);
+            k = itemParamItemMapper.updateParams(tbItemParamItem);
+        } else {
+            k = 1;
+        }
+        if (i != 0 && j != 0 && k != 0) {
+            return TaotaoResult.ok();
+        }
+        return null;
+    }
 
+    @Override
+    public TaotaoResult updateContent(TbContent tbContent) {
+        Date date = new Date();
+        tbContent.setUpdated(date);
+        int i = contentMapper.updateContent(tbContent);
+        JedisUtil.del("INKYR_CONTENT_KEY");
+        if (i != 0) {
+            return TaotaoResult.ok();
+        }
+        return null;
+    }
+
+//    @Override
+//    public TaotaoResult updateDesc(String desc, Long id) {
+//        int i = itemDescMapper.updateDesc(desc, id);
+//        if(i != 0){
+//            return TaotaoResult.ok();
+//        }
+//        return null;
+//    }
 }

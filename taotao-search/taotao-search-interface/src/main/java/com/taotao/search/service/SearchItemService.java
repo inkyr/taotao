@@ -5,6 +5,8 @@ import com.taotao.common.pojo.SearchResult;
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.pojo.TbItemCat;
 
+import java.util.List;
+
 public interface SearchItemService {
 
     TaotaoResult importAllItems();
@@ -23,4 +25,6 @@ public interface SearchItemService {
     SearchResult searchProducts(String name, int page, int rows);
 
     TbItemCat getItemCatById(Long id);
+
+    void delDocument(List<String> ids);
 }

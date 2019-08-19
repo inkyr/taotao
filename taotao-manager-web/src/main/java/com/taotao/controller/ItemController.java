@@ -2,10 +2,8 @@ package com.taotao.controller;
 
 import com.taotao.common.pojo.EasyUIResult;
 import com.taotao.common.pojo.TaotaoResult;
-import com.taotao.pojo.TbItem;
-import com.taotao.pojo.TbItemDesc;
-import com.taotao.pojo.TbItemParam;
-import com.taotao.pojo.TbItemParamItem;
+import com.taotao.pojo.*;
+import com.taotao.service.ItemParamService;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +16,9 @@ public class ItemController {
 
     @Autowired
     private ItemService itemService;
+
+    @Autowired
+    private ItemParamService itemParamService;
 
     /**
      * 分页查询
@@ -92,6 +93,28 @@ public class ItemController {
     @ResponseBody
     public TaotaoResult findItemDescById(@PathVariable("itemId") Long itemId) {
         TaotaoResult result = itemService.findItemDescById(itemId);
+        return result;
+    }
+
+    @RequestMapping("/rest/item/param/item/query/{itemId}")
+    @ResponseBody
+    public TaotaoResult getParam(@PathVariable("itemId")Long itemId){
+        TaotaoResult result = itemParamService.findItemParamByItemId(itemId);
+        return result;
+    }
+
+    //http://localhost:8081/rest/item/update
+    @RequestMapping("/rest/item/update")
+    @ResponseBody
+    public TaotaoResult updateItem(TbItem tbItem, String itemParams, String desc, Long itemParamId){
+        TaotaoResult result = itemService.updateItem(tbItem, itemParams, desc, itemParamId);
+        return result;
+    }
+
+    @RequestMapping("/rest/content/edit")
+    @ResponseBody
+    public TaotaoResult updateContentTbItem (TbContent tbContent) {
+        TaotaoResult result = itemService.updateContent(tbContent);
         return result;
     }
 }

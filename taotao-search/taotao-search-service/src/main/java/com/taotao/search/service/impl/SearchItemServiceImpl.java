@@ -11,6 +11,7 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.client.solrj.response.UpdateResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
@@ -140,6 +141,18 @@ public class SearchItemServiceImpl implements SearchItemService {
             document.addField("item_category_name", searchItem.getCategoryName());
             document.addField("item_desc", searchItem.getItemDesc());
             solrServer.add(document);
+            solrServer.commit();
+        } catch (SolrServerException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void delDocument(List<String> ids) {
+        try {
+            solrServer.deleteById(ids);
             solrServer.commit();
         } catch (SolrServerException e) {
             e.printStackTrace();

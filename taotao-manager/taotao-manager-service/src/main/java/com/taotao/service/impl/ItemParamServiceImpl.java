@@ -92,4 +92,23 @@ public class ItemParamServiceImpl implements ItemParamService {
         sb.append("</table>");
         return sb.toString();
     }
+
+    @Override
+    public TaotaoResult findItemParamByItemId(Long itemId) {
+        TbItemParamItem itemParamByItemId = itemParamItemMapper.findItemParamByItemId(itemId);
+        return TaotaoResult.ok(itemParamByItemId);
+    }
+
+//    @Override
+//    public TaotaoResult updateParams(Long itemParamId, String itemParams) {
+//        Date date = new Date();
+//        TbItemParamItem tbItemParamItem = new TbItemParamItem();
+//        tbItemParamItem.setId(itemParamId);
+//        tbItemParamItem.setUpdated(date);
+//        int i = itemParamItemMapper.updateParams(tbItemParamItem);
+//        if(i != 0){
+//            return TaotaoResult.ok();
+//        }
+//        return null;
+//    }
 }

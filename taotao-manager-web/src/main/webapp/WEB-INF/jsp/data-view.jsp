@@ -19,11 +19,21 @@
     // 指定图表的配置项和数据
     var option = {
         title: {
-            text: 'ECharts 入门示例'
+            text: '各年消费金额统计'
         },
         tooltip: {},
         legend: {
             data:['销售额']
+        },
+        toolbox:{
+            show:true,
+            mark:{
+              show:true
+            },
+            dataView:{
+              show:true,
+              type:["line", "bar"]
+            },
         },
         xAxis: {
             data: []

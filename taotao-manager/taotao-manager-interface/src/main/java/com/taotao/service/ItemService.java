@@ -1,5 +1,6 @@
 package com.taotao.service;
 
+import com.taotao.pojo.TbContent;
 import com.taotao.pojo.TbItem;
 import com.taotao.common.pojo.EasyUIResult;
 import com.taotao.common.pojo.TaotaoResult;
@@ -25,4 +26,10 @@ public interface ItemService {
     TbItem getItemById(Long itemId);
 
     TbItemDesc getItemDescById(Long itemId);
+
+    TaotaoResult updateItem(TbItem tbItem, String itemParams, String desc, Long itemParamId);
+
+    TaotaoResult updateContent(TbContent tbContent);
+
+    //TaotaoResult updateDesc(String desc, Long id);
 }
