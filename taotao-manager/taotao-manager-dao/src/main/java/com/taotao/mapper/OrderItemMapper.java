@@ -13,4 +13,7 @@ public interface OrderItemMapper {
 
     @Select("SELECT tmo.`month` as `month`, SUM(IFNULL(tor.payment,0)) as totalMoney FROM tbmonth tmo LEFT JOIN tborder tor ON tmo.`month` = DATE_FORMAT(tor.createTime,'%m') and DATE_FORMAT(tor.createTime,'%Y') = #{year} GROUP BY tmo.`month`")
     List<DataViewResult> getDataByYear(Long year);
+
+    @Select("SELECT * FROM tborderitem")
+    List<TbOrderItem> findAllOrderItem();
 }

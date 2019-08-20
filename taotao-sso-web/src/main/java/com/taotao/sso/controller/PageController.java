@@ -13,8 +13,8 @@ public class PageController {
     }
 
     @RequestMapping("/page/login")
-    public String login(String url, Model model){
-        model.addAttribute("redirectUrl", url);
+    public String login(String redirectUrl, Model model){
+        model.addAttribute("redirectUrl", redirectUrl);
         return "login";
     }
 }

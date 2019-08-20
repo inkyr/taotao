@@ -2,6 +2,7 @@ package com.taotao.order.controller;
 
 import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.common.utils.CookieUtils;
+import com.taotao.common.utils.JedisUtil;
 import com.taotao.common.utils.JsonUtils;
 import com.taotao.order.pojo.OrderInfo;
 import com.taotao.order.service.OrderService;
@@ -31,6 +32,10 @@ public class OrderController {
     @RequestMapping("/order/order-cart")
     public String showOrder(HttpServletRequest request, Model model) {
         List<TbItem> itemList = getItemList(request);
+        String json = CookieUtils.getCookieValue(request, "TT_TOKEN", true);
+        String s = JedisUtil.get("USER_INFO:" + json);
+        TbUser tbUser = JsonUtils.jsonToPojo(s, TbUser.class);
+        model.addAttribute("user", tbUser);
         model.addAttribute("cartList", itemList);
         return "order-cart";
     }

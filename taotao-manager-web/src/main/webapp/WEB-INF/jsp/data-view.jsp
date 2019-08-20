@@ -30,10 +30,11 @@
             mark:{
               show:true
             },
-            dataView:{
-              show:true,
-              type:["line", "bar"]
-            },
+            feature: {
+                magicType: {
+                    type: ['line', 'bar', 'pie']
+                }
+            }
         },
         xAxis: {
             data: []

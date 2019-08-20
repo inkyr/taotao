@@ -25,7 +25,7 @@
 <!--shortcut end-->
 
 <div class="w w1 header clearfix">
-    <div id="logo"><a href="/"><img src="/images/taotao-logo.gif" alt="淘淘商城"></a></div>
+    <div id="logo"><a href="http://localhost:8082"><img src="/images/taotao-logo.gif" alt="淘淘商城"></a></div>
 </div>
 
 <form id="orderForm" class="hide" action="/order/create.html" method="post">
@@ -40,8 +40,8 @@
 			<input type="hidden" name="orderItems[${status.index}].picPath" value="${cart.image}"/>
 		</c:forEach>
 		<input type="hidden" name="payment" value="<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${totalPrice/100 }"/>"/>
-		<input type="hidden" name="orderShipping.receiverName" value="clive"/>
-		<input type="hidden" name="orderShipping.receiverMobile" value="13800138000"/>
+		<input type="hidden" name="orderShipping.receiverName" value="${user.userName}"/>
+		<input type="hidden" name="orderShipping.receiverMobile" value="${user.phone}"/>
 		<input type="hidden" name="orderShipping.receiverState" value="四川省"/>
 		<input type="hidden" name="orderShipping.receiverCity" value="成都市"/>
 		<input type="hidden" name="orderShipping.receiverDistrict" value="高新区"/>
@@ -79,9 +79,9 @@
 						<b></b>
 						<div class="user-name">
 							<div class="fl">
-								<strong limit="4">clive</strong>&nbsp;&nbsp;收
+								<strong limit="4">${user.userName}</strong>&nbsp;&nbsp;收
 							</div>
-							<div class="fr">156*****730</div>
+							<div class="fr">${user.phone}</div>
 							<div class="clr"></div>
 						</div>
 						<div class="mt10" limit="15">成都市锦江区</div>
